@@ -1,22 +1,16 @@
 @import '../abstracts/_vars.css';
 
-.hbg-container{
-  height: 67.5rem !important;
-  background: var(--clr-black);
+.img-about {
+  width: 37.9375rem;
+  height: 41.1875rem;
+  border-radius: 1.25rem;
 }
 
-.img-about{
-  width: 37.9375rem;
-  height: 48.5rem;
-  border-radius: 1.25rem;
+.pe-join{
+  padding-right: 2.5rem;
 }
 
 .custom-about{
   padding-top: 9.5rem;
-  padding-left: 11.8rem;
-  padding-right: 11.8rem;
-}
-
-.pe-join{
-  padding-right: 11.8rem;
+  padding-bottom: 9.5rem;
 }

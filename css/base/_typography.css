@@ -16,13 +16,14 @@
   font-family: var(--ff-kan);
   font-size: var(--fs-55);
   font-weight: var(--fw-sbold);
-  padding-left: 2.188rem;
+  padding-left: 3rem;
+  margin-top: -1.5rem;
 }
 
 .about-text{
   font-family: var(--ff-pop);
   font-size: var(--fs-30);
   font-weight: var(--fw-light);
-  padding-left: 2.188rem;
+  padding-left: 3rem;
   margin-top: 40px;
 }
