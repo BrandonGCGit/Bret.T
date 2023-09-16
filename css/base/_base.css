@@ -4,6 +4,7 @@
   background-color: #1C5D99;
 }
 
+
 .bg-container-about {
   height: auto !important;
   /* height: 100vh; */
@@ -13,4 +14,9 @@
 .bg-container-categories {
   height: 100vh;
   background-color: #8C99A9;
+}
+
+
+.ff-popins{
+  font-family: var(--ff-pop);
 }
