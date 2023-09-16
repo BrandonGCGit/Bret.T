@@ -1,0 +1,16 @@
+/* Backgrounds Colors */
+.bg-container-search {
+  height: 100vh;
+  background-color: #1C5D99;
+}
+
+.bg-container-about {
+  height: auto !important;
+  /* height: 100vh; */
+  background: hsl(0, 0%, 13%);
+}
+
+.bg-container-categories {
+  height: 100vh;
+  background-color: #8C99A9;
+}

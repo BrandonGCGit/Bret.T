@@ -1,18 +1,277 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!--Bootstrap-->
+<!DOCTYPE html>
+<html lang="en">
 
-<!--  css-->
-  <link rel="stylesheet" href="./css/main.css">
-  <title>Bre.T</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="./js/main.js"></script>
+    <!-- Bootstrap -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Poppins:wght@300&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Nunito+Sans:ital,opsz@0,6..12;1,6..12&family=Poppins:wght@500&family=Signika&display=swap"
+        rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Bre.T</title>
 </head>
+
 <body>
-<h1>index</h1>
+    <div class="container-fluid p-0">
+        <div class="row">
+            <!--Navbar Start-->
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="col-10 container-fluid">
+                        <a class="navbar-brand" href="#"><img src="./img/Bre.T.png" alt="Logo Bre.T"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <!--Dropdowns Start-->
+                                <li class="nav-item dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Work
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark bg-primary">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        Freelancers
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-dark bg-primary">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                                <!--Dropdowns End-->
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Ser vendedor</a>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav gap-4">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Join Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Sign In</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!--Navbar End-->
+
+
+            <!--Search Bar Start-->
+            <div class="col-12">
+                <div class="d-flex align-items-center bg-container-search py-5">
+                    <div class="col-10 container-fluid">
+                        <div class=" row justify-content-center align-items-center">
+                            <h1 class="my-4 title-font text-center">Ofrece o contrata servicios a personas en Costa Rica
+                            </h1>
+                            <div class="col-md-10">
+                                <p class="my-5 text-center subtitle-font">Explore nuestra selección de servicios y
+                                    encuentre
+                                    exactamente lo que necesita para sus proyectos. Nuestra búsqueda avanzada le permite
+                                    filtrar por
+                                    categoría, ubicación, experiencia, etc.</p>
+
+                                <div class="search">
+                                    <input type="text" class="form-control search_bar-font"
+                                        placeholder="&#xf002;   Busca cualquier sevicio...">
+                                    <button class="btn btn-primary font-weight-bold search_btn-font">Buscar</button>
+                                </div>
+
+                                <div class="my-3 mx-4 d-flex justify-content-center align-items-center">
+                                    <h4 class="popular-section">Populares: </h4>
+                                    <ul class="popular-section">
+                                        <a class="mx-2 popular-links" href="">Website Design</a>
+                                        <a class="mx-2 popular-links" href="">WordPress</a>
+                                        <a class="mx-2 popular-links" href="">Logo Design</a>
+                                        <a class="mx-2 popular-links" href="">All Services</a>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Search Bar End-->
+
+
+            <!--About Us Start-->
+            <div class="col-12">
+                <div class="bg-container-about p-0">
+                    <div class="col-10 container-fluid">
+                        <div class="d-flex justify-content-center custom-about">
+                            <img src="./img/man.png" class="img-about" alt="man">
+                            <div>
+                                <p class="text-light about-title">Actúe hoy mismo y eleve sus proyectos al siguiente
+                                    nivel
+                                    con la ayuda
+                                    de nuestra comunidad de expertos en Costa Rica y más allá.</p>
+                                <p class="text-light about-text">En nuestra plataforma, te ofrecemos acceso a una amplia
+                                    comunidad de
+                                    profesionales y expertos en diversas áreas. Ya sea que estés buscando un diseñador
+                                    gráfico en San
+                                    José, un desarrollador web en Puntarenas o un especialista en marketing digital en
+                                    Limón, estamos
+                                    aquí para ayudarte a conectarte con los mejores talentos de Costa Rica y del mundo.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end pe-join">
+                            <button class="btn-join">Join Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--About Us End-->
+
+
+            <!--Cards Job Start-->
+            <div class="col-12">
+                <div class="bg-container-categories py-5">
+                    <div class="col-10 container-fluid">
+                        <div class="row justify-content-center align-items-center text-center">
+                            <h1 class="my-4 title-font">Servicios más importantes</h1>
+                            <p class="text-center subtitle-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            </p>
+
+                            <div class="card-group mx-5 my-3">
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/instrumentos.png" class="card-img-top img-cards mx-auto mt-5 mb-4"
+                                        alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/grifo-de-agua 1.png" class="card-img-top img-cards mx-auto mt-5 mb-4"
+                                        alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/maquina-de-coser.png" class="card-img-top img-cards mx-auto mt-5 mb-4"
+                                        alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/intercambiar-ideas.png"
+                                        class="card-img-top img-cards mx-auto mt-5 mb-4" alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/carretilla.png" class="card-img-top img-cards mx-auto mt-5 mb-4"
+                                        alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-group mx-5 my-3">
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/cinta-metrica.png" class="card-img-top img-cards mx-auto mt-5 mb-4"
+                                        alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/diseno.png" class="card-img-top img-cards mx-auto mt-5 mb-4" alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/Progr 1.png" class="card-img-top img-cards mx-auto mt-5 mb-4" alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/barbacoa.png" class="card-img-top img-cards mx-auto mt-5 mb-4"
+                                        alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                                <div class="card mx-3 rounded-3">
+                                    <img src="img/camara.png" class="card-img-top img-cards mx-auto mt-5 mb-4" alt="a">
+                                    <div class="card-body">
+                                        <h5 class="card-title cards-font bt-3 mb-5">Profesiones</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Cards Job End-->
+
+
+            <!--Popular Start-->
+            <!--Popular End-->
+
+
+            <!--Footer End-->
+            <div class="col-12">
+                <footer class="footer-background navbar navbar-expand-lg text-center pt-4 pb-4">
+                        <div class="col-10 container-fluid justify-content-center">
+                            <a class="navbar-brand footer-logo me-5 pe-5">BreT</a>
+                            </button>
+                            <div class="d-flex justify-content-center">
+                                <ul class="navbar-nav pe-4 me-4 ps-4 ms-4 gap-4">
+                                    <li class="nav-item">
+                                        <a class="nav-link footer-font" href="#">Sobre el proyecto</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link footer-font" href="#">Contacto</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link footer-font" href="#">Ayuda</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <img class="img-footer-size ms-5 me-4" src="./img/telegramaicon.png" alt="...">
+                            <img class="img-footer-size me-4" src="./img/twitter.png" alt="...">
+                            <img class="img-footer-size me-4" src="./img/facebook.png" alt="...">
+                            <img class="img-footer-size me-4" src="./img/insta.png" alt="...">
+                        </div>
+                </footer>
+            </div>
+            <!--Footer End-->
+
+        </div>
+    </div>
 </body>
-<script src="./js/main.js"></script>
+<!--<script src="./js/bootstrap.bundle.js"></script>-->
+
 </html>

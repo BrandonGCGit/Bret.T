@@ -1,0 +1,24 @@
+
+.footer-background {
+  background-color: hsl(0, 0%, 13%);
+}
+
+.footer-font {
+  color: hsl(0, 0%, 100%);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.footer-logo {
+  color: hsl(0, 0%, 100%);
+  font-family: "Kanit", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+
+/* Footer Class */
+.img-footer-size {
+  width: 2%;
+}

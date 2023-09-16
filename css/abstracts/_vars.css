@@ -1,0 +1,19 @@
+:root{
+/*font & weight*/
+  --ff-kan: "Kanit", sans-serif;
+  --ff-pop: "Poppins", sans-serif;
+  --fw-light: 300;
+  --fw-sbold: 600;
+
+/*font sizes*/
+  --fs-25: 1.5625rem;
+  --fs-30: 1.875rem;
+  --fs-55: 3.4375rem;
+
+/*colors*/
+  --clr-black: hsla(0, 0%, 13%, 1);
+  --clr-white-blue: hsla(214, 45%, 82%, 1);
+  --clr-white: hsla(0, 0%, 100%, 1);
+
+
+}

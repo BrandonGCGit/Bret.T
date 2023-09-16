@@ -1,0 +1,29 @@
+@import '../abstracts/_vars.css';
+
+.btn-join{
+  width: 7.5625rem;
+  height: 3.4375rem;
+  background: var(--clr-white-blue);
+  color: var(--clr-black);
+  border-radius: 1.25rem;
+  font-family: var(--ff-pop);
+  font-size: var(--fs-25);
+  font-weight: var(--fw-sbold);
+  border: none;
+}
+
+
+.img-about {
+  width: 37.9375rem;
+  height: 41.1875rem;
+  border-radius: 1.25rem;
+}
+
+.custom-about {
+  padding-top: 9.5rem;
+
+}
+
+.pe-join {
+  padding-bottom: 9.5rem;
+}
