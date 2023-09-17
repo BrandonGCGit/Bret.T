@@ -1,0 +1,17 @@
+@import "vendors/normalize.css";
+@import "vendors/hover-min.css";
+
+@import "abstracts/_vars.css";
+
+
+@import "base/_base.css";
+@import "base/_typography.css";
+
+@import "components/_navbar.css";
+@import "components/_card.css";
+@import "components/_buttons.css";
+@import "components/_components.css";
+@import "components/_searchBar.css";
+@import "components/_dropdowns.css";
+
+@import "layout/_footer.css";
