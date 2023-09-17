@@ -12,10 +12,14 @@
 }
 
 .bg-container-categories {
-  height: 100vh;
+  height: fit-content;
   background-color: #8C99A9;
 }
 
+.bg-container-popular {
+  height: 100vh;
+  background-color: white;
+}
 .border-dark-yellow{
   border: var(--clr-dark-yellow);
 }
