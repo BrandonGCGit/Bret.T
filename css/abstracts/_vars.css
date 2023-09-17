@@ -15,6 +15,32 @@
   --clr-white-blue: hsla(214, 45%, 82%, 1);
   --clr-white: hsla(0, 0%, 100%, 1);
   --clr-dark-clue: hsl(208.8, 69%, 36%);
+  --clr-dark-yellow: hsl(42.353, 69%, 52%);
 
+  /* custom properties - constants */
+  --base-fs: .15rem;
+  --spacer-xsm: 0.25rem;
+  --spacer-sm: 0.5rem;
+  --spacer-smd: .50rem;
+  --spacer-md: 1rem;
+  --spacer-lg: 1.5rem;
+  --spacer-xlg: 3rem;
+  /* font & weight */
+  --ff-Lato: 'Lato', sans-serif;
+  --ff-NotoSerif: 'Noto Serif', serif;
+  --fw-reg: 400;
+  --fw-med: 500;
+  --fw-bold: 700;
+  --fw-xbold: 900;
+  /*font sizes*/
+  /* font sizes */
+  --fs-xsm: 1rem;
+  --fs-sm: 1.125rem;
+  --fs-rg: 1.25rem;
+  --fs-md: 1.5rem;
+  --fs-mdl: 2.125rem;
+  --fs-mdxl: 3rem;
+  --fs-lg: 4rem;
+  --fs-xlg: 5rem;
 
 }
