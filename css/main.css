@@ -1,4 +1,5 @@
 @import "./vendors/normalize.css";
+@import "./vendors/hover-min.css";
 
 @import "./abstracts/_vars.css";
 
@@ -11,5 +12,6 @@
 @import "./components/_buttons.css";
 @import "./components/_components.css";
 @import "./components/_searchBar.css";
+@import "./components/_dropdowns.css";
 
 @import "./layout/_footer.css";

@@ -16,4 +16,7 @@
   background-color: #8C99A9;
 }
 
+.border-dark-yellow{
+  border: var(--clr-dark-yellow);
+}
 
