@@ -4,7 +4,6 @@
   background-color: #1C5D99;
 }
 
-
 .bg-container-about {
   height: auto !important;
   /* height: 100vh; */
@@ -20,7 +19,35 @@
   height: 100vh;
   background-color: white;
 }
+
+.bg-light-blue{
+  background: var(--clr-light-blue);
+}
+
+.bg-dark-yellow{
+  background: var(--clr-dark-yellow);
+}
+
+/*Border*/
 .border-dark-yellow{
   border: var(--clr-dark-yellow);
 }
 
+/*Rounded*/
+.rounded-register-input{
+  border-radius: 20px;
+}
+
+.custom-label {
+  position: absolute;
+  top: 50%; /* Alinea el texto verticalmente en el centro */
+  transform: translateY(-10%); /* Ajusta la posición vertical */
+  left: 10px; /* Ajusta la posición horizontal (izquierda) según sea necesario */
+  font-size: 18px; /* Tamaño de fuente personalizado */
+  pointer-events: none; /* Evita que el label sea clickeable */
+}
+
+/*Colors*/
+.clr-dark-yellow{
+  color: var(--clr-dark-yellow);
+}

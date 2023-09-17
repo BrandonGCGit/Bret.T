@@ -16,6 +16,7 @@
   --clr-white: hsla(0, 0%, 100%, 1);
   --clr-dark-clue: hsl(208.8, 69%, 36%);
   --clr-dark-yellow: hsl(42.353, 69%, 52%);
+  --clr-light-blue: hsl(214.286, 45%, 82%);
 
   /* custom properties - constants */
   --base-fs: .15rem;

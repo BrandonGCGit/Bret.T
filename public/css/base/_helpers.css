@@ -1,0 +1,10 @@
+
+/*Custom label for register, there is a problem with increase the font size */
+.custom-label {
+  position: absolute;
+  top: 50%; /* Alinea el texto verticalmente en el centro */
+  transform: translateY(-10%); /* Ajusta la posición vertical */
+  left: 10px; /* Ajusta la posición horizontal (izquierda) según sea necesario */
+  font-size: 18px; /* Tamaño de fuente personalizado */
+  pointer-events: none; /* Evita que el label sea clickeable */
+}
