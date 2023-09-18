@@ -20,6 +20,10 @@
     href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&family=Nunito+Sans:ital,opsz@0,6..12;1,6..12&family=Poppins:wght@500&family=Signika&display=swap"
     rel="stylesheet">
   <!-- Google Fonts -->
+<!-- Toastify-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <!-- Toastify-->
+
   <link rel="stylesheet" href="css/main.css">
   <title>Bre.T</title>
 </head>
@@ -38,31 +42,31 @@
           <a class="navbar-brand hvr-grow" href="./index.html"><img src="./img/Bre.T.png" alt="Logo Bre.T"></a>
         </div>
         <h1 class="ff-popins text-white d-flex justify-content-center mb-5">Registro</h1>
-        <form class="ff-popins mb-5">
+        <form id="signUpForm" class="ff-popins mb-5">
 <!--          Name-->
           <div class="form-floating mb-4">
-            <input type="email" class="form-control rounded-register-input" id="registerName" placeholder="name@example.com">
-            <label class="opacity-50 custom-label fs-5" for="registerName"><i class="bi bi-envelope pe-2 "></i>Nombre</label>
+            <input type="email" class="form-control rounded-register-input" id="signUp-Name" placeholder="name@example.com">
+            <label class="opacity-50 custom-label fs-5" for="signUp-Name"><i class="bi bi-envelope pe-2 "></i>Nombre</label>
           </div>
 <!--          Lastname-->
           <div class="form-floating my-4">
-            <input type="email" class="form-control rounded-register-input" id="registerName" placeholder="name@example.com">
-            <label class="opacity-50 custom-label fs-5" for="registerName"><i class="bi bi-envelope pe-2 "></i>Apellidos</label>
+            <input type="email" class="form-control rounded-register-input" id="signUp-Lastname" placeholder="name@example.com">
+            <label class="opacity-50 custom-label fs-5" for="signUp-Lastname"><i class="bi bi-envelope pe-2 "></i>Apellidos</label>
           </div>
 <!--          Email-->
           <div class="form-floating my-4">
-            <input type="email" class="form-control rounded-register-input" id="registerName" placeholder="name@example.com">
-            <label class="opacity-50 custom-label fs-5" for="registerName"><i class="bi bi-envelope pe-2 "></i>Email</label>
+            <input type="email" class="form-control rounded-register-input" id="signUp-Email" placeholder="name@example.com">
+            <label class="opacity-50 custom-label fs-5" for="signUp-Email"><i class="bi bi-envelope pe-2 "></i>Email</label>
           </div>
 <!--          Password-->
           <div class="form-floating my-4">
-            <input type="email" class="form-control rounded-register-input" id="registerName" placeholder="name@example.com">
-            <label class="opacity-50 custom-label fs-5" for="registerName"><i class="bi bi-envelope pe-2 "></i>Constraseña</label>
+            <input type="password" class="form-control rounded-register-input" id="signUp-Password" placeholder="name@example.com">
+            <label class="opacity-50 custom-label fs-5" for="signUp-Password"><i class="bi bi-envelope pe-2 "></i>Constraseña</label>
           </div>
 <!--          Confirm Password-->
           <div class="form-floating my-4">
-            <input type="email" class="form-control rounded-register-input" id="registerName" placeholder="name@example.com">
-            <label class="opacity-50 custom-label fs-5" for="registerName"><i class="bi bi-envelope pe-2 "></i>Confirmar Contraseña</label>
+            <input type="email" class="form-control rounded-register-input" id="signUp-ConfirmPassword" placeholder="name@example.com">
+            <label class="opacity-50 custom-label fs-5" for="signUp-ConfirmPassword"><i class="bi bi-envelope pe-2 "></i>Confirmar Contraseña</label>
           </div>
           <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Registrarse</button>
@@ -85,4 +89,7 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+<!--Firebase-->
+<script src="./js/firebase/signUpForm.js"></script>
 </html>
