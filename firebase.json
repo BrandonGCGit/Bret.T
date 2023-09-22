@@ -2,7 +2,7 @@
 
   "hosting": {
     "site": "bre-t",
-    "public": "public"
+    "public": "dist"
   },
   "database": {
     "rules": "database.rules.json"
