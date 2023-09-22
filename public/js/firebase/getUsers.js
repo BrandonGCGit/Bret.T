@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime'
+import 'regenerator-runtime/runtime';
 
 import { collection, getDocs, query, where } from "firebase/firestore";
 
