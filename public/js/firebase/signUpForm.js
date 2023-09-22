@@ -35,7 +35,7 @@ signUpForm.addEventListener('submit', async (e) => {
         idUser: uid,
         name: name,
         lastname: lastname,
-        province: "Puntarenas"
+        province: "Alajuela"
       });
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
