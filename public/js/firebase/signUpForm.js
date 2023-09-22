@@ -6,6 +6,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth"
 
 import {auth} from "./configuration";
 
+import { collection, addDoc } from "firebase/firestore";
+
+import { db } from "./configuration";
+
 const signUpForm = document.querySelector('#signUpForm');
 
 
@@ -14,11 +18,30 @@ signUpForm.addEventListener('submit', async (e) => {
 
   const email = signUpForm['signUp-Email'].value
   const password = signUpForm['signUp-Password'].value
+  const confirmPassword = signUpForm['signUp-ConfirmPassword'].value
+
+  const name = signUpForm['signUp-Name'].value
+  const lastname = signUpForm['signUp-Lastname'].value
+  let uid;
 
 
   try {
     const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
     console.log("info ",userCredentials);
+    uid = userCredentials.user.uid;
+
+    try {
+      const docRef = await addDoc(collection(db, "users"), {
+        idUser: uid,
+        name: name,
+        lastname: lastname,
+        province: "Puntarenas"
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+
   }catch (error){
     console.log(error.code);
     console.log(error.message);
@@ -92,6 +115,9 @@ signUpForm.addEventListener('submit', async (e) => {
       alert("Something went wrong");
     }
   }
+
+
+
 
 })
 
