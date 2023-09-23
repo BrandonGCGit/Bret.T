@@ -18,7 +18,8 @@ function listCards(){
     cardsContainer.innerHTML = "";
     // console.log(userList)
     userList.forEach((item, index) =>{
-
+      const dataToSend = item.idUser
+      const encodedData = encodeURIComponent(JSON.stringify(dataToSend));
 
       const card = document.createElement("div");
       card.classList.add('card')
@@ -27,10 +28,15 @@ function listCards(){
       cardTittle.classList.add('card-title');
       cardTittle.textContent = item.name;
 
+      const cardLink = document.createElement('a');
+      cardLink.href = `../../profile.html?data=${encodedData}`
+      cardLink.textContent = item.name
+
       const cardBody = document.createElement('div');
       cardBody.classList.add('card-body');
       cardBody.textContent = item.lastname;
 
+      card.appendChild(cardLink)
       card.appendChild(cardTittle);
       card.appendChild(cardBody);
       cardsContainer.appendChild(card);

@@ -24,13 +24,15 @@
         </a>
       </div>
       <div class="media-body va-m">
-        <h2 id="profile-name" class="media-heading">
+        <h2 id="profile-email" class="media-heading">
           <small> - Profile</small>
         </h2>
-        <p class="lead">Lorem ipsum dolor sit amet ctetur adicing elit, sed do eiusmod tempor incididunt</p>
+        <p id="profile-description" class="lead">Lorem ipsum dolor sit amet ctetur adicing elit, sed do eiusmod tempor incididunt</p>
       </div>
       <div>
-        <button id="btnSignOut" type="submit" class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Cerrar Sesión</button>
+        <div id="container-button-logOut">
+<!--          <button id="btnSignOut" type="submit" class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Cerrar Sesión</button>-->
+        </div>
       </div>
     </div>
   </div>
@@ -49,7 +51,8 @@
             <tr class="hidden">
               <th class="mw30">#</th>
               <th>First Name</th>
-              <th>Revenue</th>
+              <th>Last name</th>
+              <th>Province</th>
             </tr>
             </thead>
             <tbody>
@@ -57,25 +60,9 @@
               <td>
                 <span class="fa fa-desktop text-warning"></span>
               </td>
-              <td>Television</td>
-              <td>
-                <i class="fa fa-caret-up text-info pr10"></i>$855,913</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="fa fa-microphone text-primary"></span>
-              </td>
-              <td>Radio</td>
-              <td>
-                <i class="fa fa-caret-down text-danger pr10"></i>$349,712</td>
-            </tr>
-            <tr>
-              <td>
-                <span class="fa fa-newspaper-o text-info"></span>
-              </td>
-              <td>Newspaper</td>
-              <td>
-                <i class="fa fa-caret-up text-info pr10"></i>$1,259,742</td>
+              <td id="profile-name-2"></td>
+              <td id="profile-lastname"></td>
+              <td id="profile-province"></td>
             </tr>
             </tbody>
           </table>
@@ -86,5 +73,5 @@
 </section>
 </body>
 <script type="module" src="./js/firebase/dataProfile.js"></script>
-<script type="module" src="./js/firebase/signOut.js"></script>
+<!--<script type="module" src="./js/firebase/signOut.js"></script>-->
 </html>
