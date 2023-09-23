@@ -62,7 +62,6 @@ const monitorAuthState = async  () => {
   onAuthStateChanged (auth, user => {
     if (user){
       // console.log("Info: ",user)
-      importName.innerText = user.email;
       logOutButton();
     }else {
       fillData();
