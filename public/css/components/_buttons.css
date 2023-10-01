@@ -11,3 +11,68 @@
   font-weight: var(--fw-sbold);
   border: none;
 }
+
+.btn-navprofile{
+  border: none;
+  background: transparent;
+  margin-top: 4px;
+  margin-right: 80px;
+  margin-left: -10px;
+}
+
+.btn-profile{
+  font-family: var(--ff-pop);
+  font-size: var(--fs-rg);
+  font-weight: var(--fw-med);
+  border: none;
+  background: transparent;
+  margin-right: 70px;
+}
+
+.btn-profile:hover{
+  text-decoration: underline;
+  font-weight: var(--fw-bold);
+}
+
+.btn-pub{
+  border: none;
+  width: 7.5625rem;
+  height: 3.4375rem;
+  border-radius: 1.25rem;
+  background: var(--clr-dark-clue);
+  font-family: var(--ff-pop);
+  font-size: var(--fs-rg);
+  font-weight: var(--fw-med);
+  margin-top: -28px;
+}
+
+.btn-delete{
+  width: 1.25rem;
+  height: 1.25rem;
+  border: none;
+  background: transparent;
+}
+
+.btn-imp{
+  border: none;
+  width: 6.30244rem;
+  height: 2.80625rem;
+  border-radius: 1.25rem;
+  background: var(--clr-dark-clue);
+  font-family: var(--ff-pop);
+  font-size: var(--fs-xsm);
+  font-weight: var(--fw-sbold);
+  margin-top: -10px;
+}
+
+.btn-edit{
+  border: none;
+  width: 9.813rem;
+  height: 2.80625rem;
+  border-radius: 1.25rem;
+  background: var(--clr-white-blue);
+  font-family: var(--ff-pop);
+  font-size: var(--fs-xsm);
+  font-weight: var(--fw-sbold);
+  margin-top: -10px;
+}
