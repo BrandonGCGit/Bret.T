@@ -6,17 +6,19 @@
   --fw-sbold: 600;
 
 /*font sizes*/
+  --fs-23: 1.4375rem;
   --fs-25: 1.5625rem;
   --fs-30: 1.875rem;
+  --fs-40: 2.5rem;
   --fs-55: 3.4375rem;
+
 
 /*colors*/
   --clr-black: hsla(0, 0%, 13%, 1);
   --clr-white-blue: hsla(214, 45%, 82%, 1);
   --clr-white: hsla(0, 0%, 100%, 1);
-  --clr-dark-clue: hsl(208.8, 69%, 36%);
-  --clr-dark-yellow: hsl(42.353, 69%, 52%);
-  --clr-light-blue: hsl(214.286, 45%, 82%);
+  --clr-dark-clue: hsla(208.8, 69%, 36%);
+  --clr-dark-yellow: hsla(42.353, 69%, 52%);
 
   /* custom properties - constants */
   --base-fs: .15rem;
@@ -26,6 +28,7 @@
   --spacer-md: 1rem;
   --spacer-lg: 1.5rem;
   --spacer-xlg: 3rem;
+
   /* font & weight */
   --ff-Lato: 'Lato', sans-serif;
   --ff-NotoSerif: 'Noto Serif', serif;
@@ -34,6 +37,7 @@
   --fw-bold: 700;
   --fw-xbold: 900;
   /*font sizes*/
+
   /* font sizes */
   --fs-xsm: 1rem;
   --fs-sm: 1.125rem;

@@ -1,0 +1,52 @@
+.list-profile{
+    font-size: 45px;
+}
+
+.custom-mg{
+    margin-right: 30px;
+}
+
+.icon-nav{
+    width: 5.8125rem;
+    height: 5.8125rem;
+    border-radius: 5.8125rem;
+    object-fit: cover;
+}
+
+.card-info{
+    width: 33.125rem;
+    height: 82.6875rem;
+    border-radius: 1.25rem;
+    margin-top: -268px;
+    margin-bottom: 50px;
+    padding-left: 3.20rem;
+    padding-right: 3.20rem;
+}
+
+.card-profile{
+    width: 56.5rem;
+    height: 16.6875rem;
+    border-radius: 1.25rem;
+    padding-right: 3.2rem;
+    padding-left: 3.2rem;
+}
+
+.card-works{
+    width: 56.5rem;
+    height: 20.3125rem;
+    background: var(--clr-white);
+    border-radius: 1.25rem;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.icon-info{
+    width: 8.75rem;
+    height: 8.75rem;
+    border-radius: 8.75rem;
+    object-fit: cover;
+}
+
+.icon-ubi{
+    font-size: var(--fs-30) !important;
+}
