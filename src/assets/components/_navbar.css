@@ -1,0 +1,10 @@
+@import "../abstracts/_vars.css";
+
+.bg-navbar-blue {
+  background-color: var(--clr-dark-clue);
+}
+
+.clr-blue{
+  color: var(--clr-dark-clue);
+}
+
