@@ -10,12 +10,20 @@
   padding-right: 2.5rem;
 }
 
-.img-root{
-
-  
-}
-
 .custom-about{
   padding-top: 9.5rem;
   padding-bottom: 9.5rem;
+}
+
+/* Large devices (desktops, less than 1400px) */
+@media (max-width: 1400px) {
+  .img-about {
+    width: 26.1rem;
+    height: 29.6rem;
+  }
+
+  .custom-about{
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
 }

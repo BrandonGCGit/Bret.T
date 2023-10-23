@@ -50,3 +50,33 @@
 .icon-ubi{
     font-size: var(--fs-30) !important;
 }
+
+/* Large devices (desktops, less than 1400px) */
+@media (max-width: 1400px) {
+    .card-profile{
+        width: 43.5rem;
+        height: 16.6875rem;
+        border-radius: 1.25rem;
+        padding-right: 3.2rem;
+        padding-left: 3.2rem;
+    }
+
+    .card-works{
+        width: 43.5rem;
+        height: 20.3125rem;
+        background: var(--clr-white);
+        border-radius: 1.25rem;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .card-info{
+        width: 22.125rem;
+        height: 82.6875rem;
+        border-radius: 1.25rem;
+        margin-top: -268px;
+        margin-bottom: 50px;
+        padding-left: 3.20rem;
+        padding-right: 3.20rem;
+    }
+}
