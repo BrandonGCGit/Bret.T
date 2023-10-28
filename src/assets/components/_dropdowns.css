@@ -5,13 +5,13 @@
   text-align: center;
   z-index: 200;
 }
-[type="checkbox"]:checked,
+/*[type="checkbox"]:checked,
 [type="checkbox"]:not(:checked){
   position: absolute;
   left: -9999px;
   opacity: 0;
   pointer-events: none;
-}
+}*/
 
 
 .dropdown:checked + label,

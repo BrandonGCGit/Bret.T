@@ -11,14 +11,14 @@
         <img class="vh-100" src="@/assets/img/bg-register.png" alt="">
       </div>
       <!--    From-->
-      <div class="col-7 bg-light-blue d-flex flex-column justify-content-center align-items-center rounded-start-5">
+      <div class="col-7 bg-light-blue d-flex flex-column justify-content-center align-items-center">
         <div class="col-5">
           <div class="d-flex justify-content-center mb-5">
-            <RouterLink class="navbar-brand hvr-grow" to="/"><img src="@/assets/img/Bre.T.png" alt="BreT Logo"></RouterLink>
+            <RouterLink class="navbar-brand hvr-grow mt-5" to="/"><img src="@/assets/img/Bre.T.png" alt="BreT Logo"></RouterLink>
 <!--            <a class="navbar-brand hvr-grow"><img src="@/assets/img/Bre.T.png" alt="Logo Bre.T"></a>-->
           </div>
           <h1 class="ff-popins text-white d-flex justify-content-center mb-5">Registro</h1>
-          <form @submit.prevent="onClickRegister" id="signUpForm" class="ff-popins mb-5">
+          <form @submit.prevent="onClickRegister" id="signUpForm" class="ff-popins mb-2">
             <!--          Name-->
             <div class="form-floating mb-4">
               <input v-model="name" type="text" class="form-control rounded-register-input" id="signUp-Name" placeholder="name@example.com" required="">
@@ -47,11 +47,15 @@
             <div class="d-flex justify-content-center">
               <button type="submit" class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Registrarse</button>
             </div>
+            <div class="mt-2 text-center">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label ff-popins ms-2" for="exampleCheck1">Quiero recibir correos</label>
+            </div>
           </form>
           <div class="d-flex flex-column justify-content-center align-items-center">
+          <RouterLink class="ff-popins mb-3" to="login">¿Ya tienes una cuenta? <span class="ms-1 clr-blue"> Inicia Sesión</span></RouterLink>
             <h4 class="ff-popins text-white">Inicia sesión</h4>
-            <a href="./login.html" class="ff-popins">¿Ya tienes una cuenta? <span class="ms-1 clr-blue"> Inicia Sesión</span></a>
-            <div class="d-flex gap-5 fs-2 mt-3">
+             <div class="d-flex gap-5 fs-2 mt-3">
               <i class="bi bi-facebook"></i>
               <i class="bi bi-google"></i>
               <i class="bi bi-linkedin"></i>
