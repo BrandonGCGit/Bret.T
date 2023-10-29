@@ -105,3 +105,38 @@
   font-size: var(--fs-xsm);
   font-weight: var(--fw-reg);
 }
+
+@media (max-width: 1400px) {
+  .about-title{
+    font-size: 39px;
+    margin-top: -15px;
+  }
+
+  .about-text{
+    font-size: 21px;
+  }
+  
+  .pub-pf{
+    padding-right: 175px;
+  }
+
+  .subs-prof{
+    font-size: var(--fs-sm);
+  }
+
+  .work-prof{
+    font-size: var(--fs-sm);
+  }
+
+  .description-prof{
+    font-size: var(--fs-sm);
+  }
+
+  .description-work{
+    font-size: var(--fs-xsm);
+  }
+
+  .date-work{
+    font-size: 15px;
+  }
+}

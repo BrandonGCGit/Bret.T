@@ -76,3 +76,12 @@
   font-weight: var(--fw-sbold);
   margin-top: -10px;
 }
+
+/* Large devices (desktops, less than 1400px) */
+@media (max-width: 1400px) {
+  .btn-join{
+    width: 6.5625rem;
+    height: 3rem;
+    font-size: 22px;
+  }
+}
