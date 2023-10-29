@@ -1,5 +1,37 @@
 <script setup>
 
+//Reactividad, cualquier cambio con ref se vera alterado automaticamente
+import {ref} from "vue";
+
+import axios from 'axios';
+import router from "@/router";
+
+const formData = ref({
+  email: '',
+  password: ''
+})
+
+const content = ref('');
+
+const loginUser = async () => {
+  content.value = `email=${formData.value.email} &password=${formData.value.password}`
+
+  try {
+    const response = await axios.post('http://localhost/demo-bret/public/api/login', content.value);
+
+    let item = response.data.data;
+    sessionStorage.setItem('id', item.id);
+    sessionStorage.setItem('token', item.token);
+
+    // alert(response.data.message);
+    router.push('/profile')
+  }catch (error){
+    console.error('Error al iniciar sesión', error)
+  }
+}
+
+
+
 </script>
 
 <template>
@@ -7,37 +39,35 @@
   <div class="container-fluid">
     <div class="row">
       <!--    Img Background-->
-      <div class="col-5 bg-image d-none d-sm-block"></div>
+      <div class="col-5 bg-image vh-100 d-none d-sm-block"></div>
       <!--    From-->
-      <div class="col bg-light-blue d-flex flex-column justify-content-center align-items-center">
+      <div class="col bg-light-blue d-flex flex-column justify-content-center align-items-center vh-100">
         <div class="d-flex justify-content-center mb-5">
-          <RouterLink class="navbar-brand hvr-grow mt-5" to="/"><img src="@/assets/img/Bre.T.png" alt="Bre.T Logo"></RouterLink>
+          <RouterLink class="navbar-brand hvr-grow" to="/"><img src="@/assets/img/Bre.T.png" alt="Bre.T Logo"></RouterLink>
 <!--          <a class="navbar-brand hvr-grow" href="./index.html"><img src="@/assets/img/Bre.T.png" alt="Logo Bre.T"></a>-->
         </div>
         <h1 class="ff-popins text-white d-flex justify-content-center mb-5">Iniciar Sesión</h1>
-        <form @submit.prevent="onClickLogin" id="logInForm" class="ff-popins mb-2">
+        <form @submit.prevent="onClickLogin" id="logInForm" class="ff-popins mb-5">
           <!--          Email-->
           <div class="form-floating my-4">
-            <input v-model="email" type="email" class="form-control rounded-register-input px-5" id="logIn-Email" placeholder="name@example.com" required="">
+            <input v-model="formData.email" type="email" class="form-control rounded-register-input" id="logIn-Email" placeholder="name@example.com" required="">
             <label class="opacity-50 custom-label fs-5" for="logIn-Email"><i class="bi bi-envelope pe-2 "></i>Email</label>
           </div>
           <!--          Password-->
           <div class="form-floating my-4">
-            <input v-model="password" type="password" class="form-control rounded-register-input px-5" id="logIn-Password" placeholder="name@example.com" required="">
+            <input v-model="formData.password" type="password" class="form-control rounded-register-input" id="logIn-Password" placeholder="name@example.com" required="">
             <label class="opacity-50 custom-label fs-5" for="logIn-Password"><i class="bi bi-envelope pe-2 "></i>Constraseña</label>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Iniciar Sesión</button>
-          </div>
-          <div class="mt-2 text-center">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label ff-popins ms-2" for="exampleCheck1">Recuerdame</label>
+            <button
+                @click="loginUser"
+                type="submit"
+                class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Iniciar Sesión</button>
           </div>
         </form>
         <div class="d-flex flex-column justify-content-center align-items-center">
-        <RouterLink class="ff-popins clr-blue mb-2" to="recover">¿Has olvidado tu contraseña?</RouterLink>
-        <RouterLink class="ff-popins" to="register mb-3">¿No tienes una cuenta? <span class="ms-1 clr-blue"> Registrate</span></RouterLink>
-          <h4 class="ff-popins text-white pt-2">Inicia sesión</h4>
+          <h4 class="ff-popins text-white">Inicia sesión</h4>
+          <a href="./register.html" class="ff-popins">¿No tienes una cuenta? <span class="ms-1 clr-blue"> Registrate</span></a>
           <div class="d-flex gap-5 fs-2 mt-3">
             <i class="bi bi-facebook"></i>
             <i class="bi bi-google"></i>
@@ -55,65 +85,62 @@
 <!--  <script type="module" src="./js/firebase/logInForm.js"></script>-->
 </template>
 
-<style scoped>
 
-</style>
+<!--<script>-->
+<!--  import axios from 'axios'-->
 
-<script>
-  import axios from 'axios'
+<!--  export default{-->
+<!--    data(){-->
 
-  export default{
-    data(){
+<!--    },-->
+<!--    mounted() {-->
+<!--    },-->
+<!--    methods: {-->
+<!--      onClickLogin() {-->
+<!--        let bodyContent = 'email=' + this.email + '&password=' + this.password;-->
+<!--        -->
+<!--        axios-->
+<!--          .post(-->
+<!--            'http://localhost/demo-bret/public/api/login',-->
+<!--            bodyContent-->
+<!--          )-->
+<!--          .then(-->
+<!--            response => {-->
+<!--              let item = response.data.data;-->
+<!--              console.log(response.data.data);-->
+<!--              -->
+<!--              localStorage.setItem('id', item.id);-->
+<!--              localStorage.setItem('name', item.name);-->
+<!--              localStorage.setItem('email', this.email);-->
+<!--              localStorage.setItem('token', item.token);-->
 
-    },
-    mounted() {
-    },
-    methods: {
-      onClickLogin() {
-        let bodyContent = 'email=' + this.email + '&password=' + this.password;
-        
-        axios
-          .post(
-            'http://localhost/demo-bret/public/api/login',
-            bodyContent
-          )
-          .then(
-            response => {
-              let item = response.data.data;
-              console.log(response.data.data);
-              
-              localStorage.setItem('id', item.id);
-              localStorage.setItem('name', item.name);
-              localStorage.setItem('email', this.email);
-              localStorage.setItem('token', item.token);
+<!--              alert(response.data.message);-->
+<!--              this.$router.push({ name: 'home' }); // Redirige a la página de destino-->
+<!--            }-->
+<!--          )-->
+<!--          .catch(-->
+<!--            error => {-->
+<!--              console.log(error);-->
+<!--              if (error.response) {-->
+<!--                const errorResponse = error.response.data;-->
+<!--                const errorMessages = [];-->
 
-              alert(response.data.message);
-              this.$router.push({ name: 'home' }); // Redirige a la página de destino
-            }
-          )
-          .catch(
-            error => {
-              console.log(error);
-              if (error.response) {
-                const errorResponse = error.response.data;
-                const errorMessages = [];
+<!--                for (const key in errorResponse.data) {-->
+<!--                  if (errorResponse.data.hasOwnProperty(key)) {-->
+<!--                    errorMessages.push(errorResponse.data[key][0]);-->
+<!--                  }-->
+<!--                }-->
 
-                for (const key in errorResponse.data) {
-                  if (errorResponse.data.hasOwnProperty(key)) {
-                    errorMessages.push(errorResponse.data[key][0]);
-                  }
-                }
+<!--                const errorMessageString = errorMessages.join('\n');-->
 
-                const errorMessageString = errorMessages.join('\n');
-
-                alert(`${errorMessageString}`);
-              } else {
-                alert(`Error en la solicitud`);
-              }
-            }
-          )
-      }
-      
-    }
-  }
-</script>
+<!--                alert(`${errorMessageString}`);-->
+<!--              } else {-->
+<!--                alert(`Error en la solicitud`);-->
+<!--              }-->
+<!--            }-->
+<!--          )-->
+<!--      }-->
+<!--      -->
+<!--    }-->
+<!--  }-->
+<!--</script>-->
