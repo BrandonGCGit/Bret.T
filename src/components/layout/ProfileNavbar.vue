@@ -1,5 +1,21 @@
-<script setup>
+<script>
+import axios from 'axios'
 
+export default{
+  data(){
+    user []: ""
+  },
+  mounted() {
+    this.user.push({
+      email: localStorage.getItem('email'),
+      name: localStorage.getItem('name'),
+      token: localStorage.getItem('lastname'),
+      id: localStorage.getItem('id')
+    });
+  },
+  methods: {
+  }
+}
 </script>
 
 <template>
@@ -7,7 +23,7 @@
   <div class="col-12 p-0 m-0">
     <nav class="navbar navbar-expand-lg ff-popins pt-3">
       <div class="col-10 container-fluid">
-        <a class="navbar-brand hvr-grow" href="#"><img src="@/assets/img/logo-profile2.png" alt="Logo Bre.T"></a>
+        <a class="navbar-brand hvr-grow" href="#"><img v-if="" src="@/assets/img/logo-profile2.png" alt="Logo Bre.T"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
                 aria-expanded="false" aria-label="Toggle navigation">
