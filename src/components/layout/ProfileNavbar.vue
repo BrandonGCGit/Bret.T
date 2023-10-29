@@ -1,9 +1,8 @@
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 
 export default{
   data(){
-    user []: ""
   },
   mounted() {
     this.user.push({
