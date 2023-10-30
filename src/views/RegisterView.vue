@@ -32,12 +32,12 @@ const defaultDataProfile = ref({
 
 const contentRegisterUser = ref('');
 const registerUser = async () => {
-  contentRegisterUser.value = `name=${formData.value.name} ${formData.value.lastName} &email=${formData.value.email}&password=${formData.value.password}&confirm_password=${formData.value.confirmPassword}`;
+  contentRegisterUser.value = `name=${formData.value.name} ${" "+formData.value.lastName} &email=${formData.value.email}&password=${formData.value.password}&confirm_password=${formData.value.confirmPassword}`;
 
   try {
     const response =  await axios.post('http://localhost/demo-bret/public/api/register', contentRegisterUser.value);
 
-    defaultDataProfile.value.name = formData.value.name
+    defaultDataProfile.value.name = formData.value.name + " " + formData.value.lastName
     defaultDataProfile.value.users_id = response.data.data.id
     //---------------------
     //Create table contacts

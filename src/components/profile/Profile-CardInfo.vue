@@ -1,5 +1,11 @@
 <script setup>
 
+import {ref} from "vue";
+
+defineProps({
+  infoProfile: ref([])
+})
+
 </script>
 
 <template>
@@ -8,7 +14,7 @@
       <img src="@/assets/img/hombre-profile.jpeg" class="icon-info" alt="hombre-profile">
     </div>
     <div class="d-flex justify-content-center pt-3">
-      <p class="name-prof">Luis Carlos <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
+      <p class="name-prof"> {{infoProfile.name}}<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
         <rect x="4" y="3.99995" width="19" height="19" fill="#1C5D99"/>
         <rect y="10.6304" width="19.5183" height="19.5183" transform="rotate(-33 0 10.6304)" fill="#1C5D99"/>
         <rect x="0.615234" y="18.446" width="19.5183" height="19.5183" transform="rotate(-66 0.615234 18.446)" fill="#1C5D99"/>
@@ -16,10 +22,9 @@
       </svg></p>
     </div>
     <div class="d-flex justify-content-center">
-      <p class="work-prof">Desarrollador Web</p>
     </div>
     <div class="d-flex justify-content-center pt-2">
-      <p class="subs-prof color-darkblue"><i class="bi bi-geo-alt icon-ubi text-dark"></i>Puntarenas</p>
+      <p class="subs-prof color-darkblue"><i class="bi bi-geo-alt icon-ubi text-dark"></i>{{infoProfile.province}}</p>
     </div>
     <div class="d-flex justify-content-between pt-5">
       <p class="subs-prof m-0">DESCRIPCIÓN</p>
@@ -39,11 +44,7 @@
       <p class="subs-prof m-0">CONTACTAR</p>
     </div>
     <div class="pt-3">
-      <p class="description-prof m-0">+506 8448-7788</p>
-      <p class="description-prof m-0 color-darkblue pt-3">+ Añadir contacto</p>
-      <p class="description-prof m-0 color-darkblue pt-3">+ Añadir contacto</p>
-      <p class="description-prof m-0 color-darkblue pt-3">+ Añadir contacto</p>
-      <p class="description-prof m-0 color-darkblue pt-3">+ Añadir contacto</p>
+      <p class="description-prof m-0">{{infoProfile.phone_number}}</p>
     </div>
   </div>
 </template>
