@@ -4,6 +4,7 @@ import ProfileCardJobList from "@/components/profile/Profile-CardJobList.vue";
 import ProfileCardInfo from "@/components/profile/Profile-CardInfo.vue";
 import {onBeforeMount, onMounted, ref, watch} from "vue";
 import axios from "axios";
+import router from "@/router";
 
 
 
@@ -35,6 +36,9 @@ const listJobsID = ref('')
 const listJobs = ref([])
 
 
+function addNewJob(){
+  router.push(`/addJob/${dataProfile.value.id}`)
+}
 
 
 const getProfileData = async () =>{
@@ -89,6 +93,7 @@ const getListJobs = async () => {
 }
 
 
+
 onBeforeMount(async () => {
 
   // Almacenar los datos del Session
@@ -135,7 +140,7 @@ onBeforeMount(async () => {
           <p class="pub-pf">Crea una publicaciones para mostrar tus habilidades y conseguir clientes </p>
 
           <div class="d-flex justify-content-end">
-            <button class="btn-pub text-white">Publicar</button>
+            <button @click="addNewJob()" class="btn-pub text-white">Publicar</button>
           </div>
         </div>
       </div>
