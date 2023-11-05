@@ -12,7 +12,7 @@ const token = ref(sessionStorage.getItem('token'))
 
 const logOut = async () => {
   try {
-    const token = sessionStorage.getItem('token'); // Reemplaza con tu token real
+    // const token = sessionStorage.getItem('token'); // Reemplaza con tu token real
 
     // content.value = `email=${formData.value.email} &password=${formData.value.password}`
     // const content = `token=`
@@ -31,7 +31,8 @@ const logOut = async () => {
     console.log("Response del LotOut", response)
     // Realiza otras operaciones con la respuesta si es necesario.
     sessionStorage.clear()
-    router.push('/')
+    location.reload()
+    await router.push('/')
 
   } catch (error) {
     console.error('Error con cargar datos del profile: ', error);

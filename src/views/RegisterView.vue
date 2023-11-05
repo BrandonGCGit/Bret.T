@@ -2,6 +2,11 @@
 import { ref } from 'vue';
 import {useRouter} from "vue-router";
 import axios from 'axios';
+import {useNotification} from "@/stores/notification";
+
+
+//Pinia Store
+const notificationStore = useNotification()
 
 const router = useRouter();
 
@@ -32,46 +37,66 @@ const defaultDataProfile = ref({
 
 const contentRegisterUser = ref('');
 const registerUser = async () => {
-  contentRegisterUser.value = `name=${formData.value.name} ${" "+formData.value.lastName} &email=${formData.value.email}&password=${formData.value.password}&confirm_password=${formData.value.confirmPassword}`;
 
-  try {
-    const response =  await axios.post('http://localhost/demo-bret/public/api/register', contentRegisterUser.value);
+  if (!formData.value.name)
+  {
+    notificationStore.notifyNormalToast("warning", "Escriba su nombre")
+  }
+  else if(!formData.value.lastName)
+  {
+    notificationStore.notifyNormalToast("warning", "Escriba sus apellidos")
+  }
+  else if(!formData.value.email)
+  {
+    notificationStore.notifyNormalToast("warning", "Escriba su email")
+  }
+  else if(!formData.value.password)
+  {
+    notificationStore.notifyNormalToast("warning", "Escriba su contraseña")
+  }
+  else if (!formData.value.confirmPassword)
+  {
+    notificationStore.notifyNormalToast("warning", "Escriba la confirmación de la contraseña")
+  }
+  else {
+    contentRegisterUser.value = `name=${formData.value.name} ${" "+formData.value.lastName} &email=${formData.value.email}&password=${formData.value.password}&confirm_password=${formData.value.confirmPassword}`;
 
-    defaultDataProfile.value.name = formData.value.name + " " + formData.value.lastName
-    defaultDataProfile.value.users_id = response.data.data.id
-    //---------------------
-    //Create table contacts
-    //---------------------
     try {
-      await createTableContacts();
+      const response =  await axios.post('http://localhost/demo-bret/public/api/register', contentRegisterUser.value);
+      defaultDataProfile.value.name = formData.value.name + " " + formData.value.lastName
+      defaultDataProfile.value.users_id = response.data.data.id
+      //---------------------
+      //Create table contacts
+      //---------------------
       try {
-        //---------------------
-        //Create table rating
-        await createTableRating();
-        //---------------------
+        await createTableContacts();
+
         try {
           //---------------------
-          //Create table profile
+          //Create table rating
+          await createTableRating();
           //---------------------
-          await registerProfile()
-
+          try {
+            //---------------------
+            //Create table profile
+            //---------------------
+            await registerProfile()
+          }catch (error){
+            console.log(error)
+          }
         }catch (error){
           console.log(error)
         }
       }catch (error){
-        console.log(error)
+        console.error(error)
       }
-    }catch (error){
-      console.error(error)
+      await router.push("/login")
+    } catch (error) {
+      console.error('Error al registrar usuario:', error);
     }
-
-
-
-
-    router.push('/login')
-  } catch (error) {
-    console.error('Error al registrar usuario:', error);
   }
+
+
 };
 //--------------------------------------------------------------------------
 //REGISTER USER
@@ -169,7 +194,8 @@ const registerProfile = async () => {
             <!--            <a class="navbar-brand hvr-grow"><img src="@/assets/img/Bre.T.png" alt="Logo Bre.T"></a>-->
           </div>
           <h1 class="ff-popins text-white d-flex justify-content-center mb-5">Registro</h1>
-          <form @submit.prevent="registerUser" id="signUpForm" class="ff-popins mb-5">
+          <!--          <form @submit.prevent="registerUser" id="signUpForm" class="ff-popins mb-5">-->
+          <form @submit.prevent id="signUpForm" class="ff-popins mb-5">
             <!--          Name-->
             <div class="form-floating mb-4">
               <!--                            <input v-model="name" type="text" class="form-control rounded-register-input" id="signUp-Name" placeholder="name@example.com" required="">-->
@@ -202,6 +228,7 @@ const registerProfile = async () => {
             </div>
             <div class="d-flex justify-content-center">
               <button
+                  @click="registerUser"
                   type="submit"
                   class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Registrarse
               </button>
@@ -209,7 +236,7 @@ const registerProfile = async () => {
           </form>
           <div class="d-flex flex-column justify-content-center align-items-center">
             <h4 class="ff-popins text-white">Inicia sesión</h4>
-            <a href="./login.html" class="ff-popins">¿Ya tienes una cuenta? <span class="ms-1 clr-blue"> Inicia Sesión</span></a>
+            <router-link to="/login" class="ff-popins">¿Ya tienes una cuenta? <span class="ms-1 clr-blue"> Inicia Sesión</span></router-link>
             <div class="d-flex gap-5 fs-2 mt-3">
               <i class="bi bi-facebook"></i>
               <i class="bi bi-google"></i>

@@ -51,8 +51,8 @@ const getProfileData = async () =>{
     dataProfile.value.contacts_id = response.data.data.contacts_id
     dataProfile.value.users_id = response.data.data.users_id
 
-    console.log("Full name response?: ", response.data.data.name)
-    console.log("Full name?: ", dataProfile.value)
+    // console.log("Full name response?: ", response.data.data.name)
+    // console.log("Full name?: ", dataProfile.value)
 
   }catch (error){
     console.error("Error con cargar datos del profile: ", error)
@@ -65,7 +65,7 @@ const getListJobsID = async () =>{
   try {
     const response = await axios.get(`http://localhost/demo-bret/public/api/profile_job/${dataProfile.value.id}`);
     listJobsID.value = response.data.data
-    console.log('Datos de getlistjobs',listJobsID.value)
+    // console.log('Datos de getlistjobs',listJobsID.value)
   }catch (error){
     console.error("Error con a cargar lista jobs: ", error)
   }finally {
@@ -80,7 +80,7 @@ const getListJobs = async () => {
       //Recorriendo el arreglo de jobs lo voy poniendo uno a uno en el arreglo listJobs.value.jobs
       listJobs.value.push(response.data.data)
     }
-    console.log('Datos get job: ', listJobs)
+    // console.log('Datos get job: ', listJobs)
   }catch (error){
     console.error("Error con a cargar lista jobs: ", error)
   }finally {

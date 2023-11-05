@@ -5,6 +5,7 @@ import {ref} from "vue";
 
 import axios from 'axios';
 import router from "@/router";
+import {useNotification} from "@/stores/notification";
 
 const formData = ref({
   email: '',
@@ -13,24 +14,44 @@ const formData = ref({
 
 const content = ref('');
 
+//Pinia Store
+const notificationStore = useNotification()
+
+
 const loginUser = async () => {
-  content.value = `email=${formData.value.email} &password=${formData.value.password}`
 
-  try {
-    const response = await axios.post('http://localhost/demo-bret/public/api/login', content.value);
-
-    let item = response.data.data;
-    sessionStorage.setItem('id', item.id);
-    sessionStorage.setItem('token', item.token);
-
-    // alert(response.data.message);
-    router.push('/profile')
-  }catch (error){
-    console.error('Error al iniciar sesión', error)
+  if (!formData.value.email)
+  {
+    notificationStore.notifyNormalToast("warning","El campo del email esta vacío")
   }
+  else if (!formData.value.password)
+  {
+    notificationStore.notifyNormalToast("warning", "El campo de la contraseña esta vacío")
+  }
+  else
+  {
+    content.value = `email=${formData.value.email} &password=${formData.value.password}`
+
+    try {
+      const response = await axios.post('http://localhost/demo-bret/public/api/login', content.value);
+      notificationStore.notifyLoadingToast("info", "Cargando su usuario")
+      console.log("response: ", response.data)
+      let item = response.data.data;
+      sessionStorage.setItem('id', item.id);
+      sessionStorage.setItem('token', item.token);
+
+      router.push('/profile')
+    }catch (error){
+      console.error('Error al iniciar sesión', error.response.data.data.error)
+      if (error.response.data.data.error === "Unauthorised")
+      {
+        notificationStore.notifyNormalToast("error", "Su correo o contraseña con incorrectos")
+      }
+    }
+  }
+
+
 }
-
-
 
 </script>
 
@@ -61,6 +82,7 @@ const loginUser = async () => {
           <div class="d-flex justify-content-center">
             <button
                 @click="loginUser"
+                @keyup.enter="loginUser"
                 type="submit"
                 class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Iniciar Sesión</button>
           </div>

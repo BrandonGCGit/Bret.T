@@ -1,11 +1,13 @@
 <script setup>
 
 import DropdownList from "@/components/layout/main-navbar/Dropdown-List.vue";
-import {ref} from "vue";
+import {onBeforeMount, ref} from "vue";
 import axios from "axios";
-import router from "@/router";
 
-const token = ref(sessionStorage.getItem('token'))
+const sessionStorageData = ref({
+  id: '',
+  token: ''
+})
 
 
 const logOut = async () => {
@@ -33,6 +35,14 @@ const logOut = async () => {
     console.error('Error con cargar datos del profile: ', error);
   }
 };
+
+
+onBeforeMount(async () => {
+  // Almacenar los datos del Session
+  sessionStorageData.value.id = sessionStorage.getItem('id')
+  sessionStorageData.value.token = sessionStorage.getItem('token')
+})
+
 </script>
 
 <template>
@@ -58,19 +68,19 @@ const logOut = async () => {
           <ul class="navbar-nav gap-4">
             <li class="nav-item">
               <RouterLink
-                  v-if="!token"
+                  v-if="!sessionStorageData.token"
                   class="nav-link active hvr-underline-from-left text-white fw-light fs-5" to="login">Iniciar Sesión</RouterLink>
               <RouterLink
-                  v-if="!token"
-                  class="nav-link active hvr-underline-from-left text-white fw-light fs-5" to="register">Registrarse</RouterLink>
+                  v-else
+                  class="nav-link active hvr-underline-from-left text-white fw-light fs-5" to="profile">Perfil</RouterLink>
 
             </li>
             <li class="nav-item">
               <RouterLink
-                  v-if="token"
-                  class="nav-link active hvr-underline-from-left text-white fw-light fs-5" to="profile">Perfil</RouterLink>
+                  v-if="!sessionStorageData.token"
+                  class="nav-link active hvr-underline-from-left text-white fw-light fs-5" to="register">Registrarse</RouterLink>
               <RouterLink
-                  v-if="token"
+                  v-else
                   @click="logOut"
                   class="nav-link active hvr-underline-from-left text-white fw-light fs-5" to="/">Cerrar Sesión</RouterLink>
             </li>

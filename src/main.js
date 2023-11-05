@@ -1,6 +1,7 @@
 import './assets/main.css'
 import 'bootstrap'
 import 'axios'
+import 'vue3-toastify/dist/index.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
