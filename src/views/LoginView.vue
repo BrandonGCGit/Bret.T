@@ -89,7 +89,7 @@ const loginUser = async () => {
         </form>
         <div class="d-flex flex-column justify-content-center align-items-center">
           <h4 class="ff-popins text-white">Inicia sesión</h4>
-          <a href="./register.html" class="ff-popins">¿No tienes una cuenta? <span class="ms-1 clr-blue"> Registrate</span></a>
+          <a href="./register.html" class="ff-popins">¿No tienes una cuenta? <router-link to="/register" class="ms-1 clr-blue"> Registrate</router-link></a>
           <div class="d-flex gap-5 fs-2 mt-3">
             <i class="bi bi-facebook"></i>
             <i class="bi bi-google"></i>
