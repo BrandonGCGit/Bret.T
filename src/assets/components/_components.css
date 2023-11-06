@@ -15,6 +15,16 @@
   padding-bottom: 9.5rem;
 }
 
+.category-homecard{
+  min-width: 14.7265rem;
+  max-width: 17.7265rem;
+}
+
+.profile-homecard{
+  min-width: 22.375rem;;
+  max-width: 22.375rem;;
+}
+
 /* Large devices (desktops, less than 1400px) */
 @media (max-width: 1400px) {
   .img-about {

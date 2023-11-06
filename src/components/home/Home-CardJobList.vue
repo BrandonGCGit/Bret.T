@@ -14,18 +14,15 @@ import HomeCardJob from "@/components/home/Home-CardJob.vue";
           <p class="text-center subtitle-font fw-light">Descubre nuestra amplia gama de servicios esenciales, cuidadosamente diseñados para mejorar tu experiencia
           </p>
 
-          <div class="card-group mx-5 my-3">
-            <HomeCardJob></HomeCardJob>
-            <HomeCardJob></HomeCardJob>
-            <HomeCardJob></HomeCardJob>
+          <div class="card-group mx-5">
             <HomeCardJob></HomeCardJob>
           </div>
-          <div class="card-group mx-5 my-3">
+          <!--<div class="card-group mx-5 my-3">
             <HomeCardJob></HomeCardJob>
             <HomeCardJob></HomeCardJob>
             <HomeCardJob></HomeCardJob>
             <HomeCardJob></HomeCardJob>
-          </div>
+          </div>-->
 
         </div>
       </div>

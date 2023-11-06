@@ -1,8 +1,9 @@
 <script setup>
 import DropdownItem from "@/components/layout/main-navbar/Dropdown-Item.vue";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
+import axios from "axios";
 
-const jobs = ref([{ job: 'Chef' }, { job: 'Programdor' }])
+//const jobs = ref([{ job: 'Chef' }, { job: 'Programador' }])
 
 </script>
 
@@ -11,7 +12,7 @@ const jobs = ref([{ job: 'Chef' }, { job: 'Programdor' }])
     <div class="sec-center">
       <input class="dropdown" type="checkbox" id="dropdown1" name="dropdown"/>
       <label class="for-dropdown ff-popins fs-5" for="dropdown1">Trabajos <i class="bi bi-arrow-up-short fs-3"></i></label>
-      <DropdownItem :jobs="jobs"></DropdownItem>
+      <DropdownItem></DropdownItem>
     </div>
   </li>
 </template>
