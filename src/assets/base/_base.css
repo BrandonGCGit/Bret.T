@@ -51,3 +51,18 @@
 .clr-dark-yellow{
   color: var(--clr-dark-yellow);
 }
+
+.bg-light-blue-responsive{
+  background: var(--clr-white-blue);
+}
+
+/* Large devices (desktops, less than 1400px) */
+@media (max-width: 1400px) {
+
+  .bg-light-blue-responsive{
+    width: 50%;
+  }
+
+}
+
+

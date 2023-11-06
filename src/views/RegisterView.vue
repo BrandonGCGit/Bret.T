@@ -183,14 +183,12 @@ const registerProfile = async () => {
   <div class="container-fluid">
     <div class="row">
       <!--    Img Background-->
-      <div class="col-5">
-        <img class="vh-100" src="@/assets/img/bg-register.png" alt="">
-      </div>
+      <div class="col-5 bg-image vh-100 d-none d-sm-block"></div>
       <!--    From-->
-      <div class="col-7 bg-light-blue d-flex flex-column justify-content-center align-items-center rounded-start-5">
+      <div class="col-7 bg-light-blue-responsive d-flex flex-column justify-content-center align-items-center">
         <div class="col-5">
           <div class="d-flex justify-content-center mb-5">
-            <RouterLink class="navbar-brand hvr-grow" to="/"><img src="@/assets/img/Bre.T.png" alt="BreT Logo"></RouterLink>
+            <RouterLink class="navbar-brand hvr-grow pt-5" to="/"><img src="@/assets/img/Bre.T.png" alt="BreT Logo"></RouterLink>
             <!--            <a class="navbar-brand hvr-grow"><img src="@/assets/img/Bre.T.png" alt="Logo Bre.T"></a>-->
           </div>
           <h1 class="ff-popins text-white d-flex justify-content-center mb-5">Registro</h1>
