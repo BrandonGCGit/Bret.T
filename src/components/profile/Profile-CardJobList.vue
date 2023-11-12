@@ -5,14 +5,13 @@ defineProps({
   listJobs: Array
 })
 
-
-
 </script>
 
 <template>
 
   <div v-for="job in listJobs" :key="job.id">
     <ProfileCardJob
+        :id="job.id"
         :name="job.nameJob"
         :cost="job.cost"
         :description="job.description"

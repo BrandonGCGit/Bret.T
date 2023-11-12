@@ -10,7 +10,7 @@ import axios from "axios";
 <template>
   <li class="nav-item dropdown text-white">
     <div class="sec-center">
-      <input class="dropdown" type="checkbox" id="dropdown1" name="dropdown"/>
+      <input class="dropdown" style="display: none;" type="checkbox" id="dropdown1" name="dropdown"/>
       <label class="for-dropdown ff-popins fs-5" for="dropdown1">Trabajos <i class="bi bi-arrow-up-short fs-3"></i></label>
       <DropdownItem></DropdownItem>
     </div>
