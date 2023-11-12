@@ -22,7 +22,6 @@ const getListProfiles = async () => {
 onMounted(async () => {
   try {
     await getListProfiles()
-    console.log(listProfiles);
   }
   catch (error)
   {
@@ -33,8 +32,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="card mx-3 rounded-3 my-3 profile-homecard" v-for="(item, index) in listProfiles" v-bind:key="index">
-    <img :src="item.image" class="card-img-top img-cards mx-auto mt-5 mb-4"
+  <div class="card mx-3 rounded-3 my-3 profile-homecard" v-for="(item, index) in listProfiles.slice(0, 3)" v-bind:key="index">
+    <img src="@/assets/img/logo-profile.png" class="card-img-top img-cards mx-auto mt-5 mb-4"
          alt="a">
     <div class="card-body">
       <h5 class="card-title cards-font bt-3 mb-5">{{ item.nameProfile }}</h5>

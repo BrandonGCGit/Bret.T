@@ -4,3 +4,13 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+/* Large devices (desktops, less than 1400px) */
+@media (max-width: 1400px) {
+
+  .bg-image{
+    position: relative;
+    width: 50%;
+  }
+
+}

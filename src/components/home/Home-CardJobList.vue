@@ -1,6 +1,35 @@
 <script setup>
 
 import HomeCardJob from "@/components/home/Home-CardJob.vue";
+/*
+import {onMounted, ref} from "vue";
+import axios from "axios";
+
+const listCategories = ref({
+  name: "",
+  img: ""
+})
+const getListCategories = async () => {
+  try {
+    const response = await axios.get(`http://localhost/demo-bret/public/api/category/all`);
+    console.log(response)
+    // listCategories.value.name = response.data.data.map(item => item.nameCategory);
+    // listCategories.value.img = response.data.data.map(item => item.img);
+
+  }catch (error){
+    console.error("Error con a cargar lista categorias: ", error)
+  }
+}
+onMounted(async () => {
+  try {
+    await getListCategories()
+  }
+  catch (error)
+  {
+    console.log("Error con getListCategories", error)
+  }
+})*/
+
 </script>
 
 <template>
