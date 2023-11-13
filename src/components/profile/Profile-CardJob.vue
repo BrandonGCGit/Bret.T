@@ -15,6 +15,9 @@ defineProps({
   description: String,
   created_at: String
 })
+const editJob = async ($id) => {
+  router.push(`/editJob/${$id}`)
+}
 
 
 const deleteJob = async ($id) => {
@@ -58,7 +61,7 @@ onBeforeMount(async () => {
       <p class="date-work">Publicado el {{created_at}}</p>
       <div class="d-flex gap-4">
         <button class="btn-imp text-white">Impulsar</button>
-        <button class="btn-edit text-dark">Editar detalles</button>
+        <button @click="editJob(id)" class="btn-edit text-dark">Editar detalles</button>
       </div>
     </div>
   </div>
