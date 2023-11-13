@@ -24,11 +24,10 @@ const deleteJob = async ($id) => {
   try {
     const response = await axios.get(`http://localhost/demo-bret/public/api/profile_job/destroy/` + $id);
     const response2 = await axios.get(`http://localhost/demo-bret/public/api/job/destroy/` + $id);
-
+    location.reload()
   } catch (error){
       console.error('Error al eliminar', error)
   }
-  
 }
 
 onBeforeMount(async () => {
