@@ -1,10 +1,14 @@
 <script setup>
 
 import {ref} from "vue";
+import router from "@/router";
 
 defineProps({
   infoProfile: ref([])
 })
+const editProfile = async ($id) => {
+  router.push(`/editProfile/${$id}`)
+}
 
 </script>
 
@@ -28,7 +32,7 @@ defineProps({
     </div>
     <div class="d-flex justify-content-between pt-5">
       <p class="subs-prof m-0">DESCRIPCIÓN</p>
-      <a href="" class="work-prof color-darkblue p-0 m-0">Editar</a>
+      <a @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Editar</a>
     </div>
     <div class="d-flex justify-content-between pt-4">
       <p class="description-prof m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>

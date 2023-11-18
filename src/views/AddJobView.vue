@@ -24,7 +24,6 @@ const getListCategories = async () => {
   try {
     const response = await axios.get(`http://localhost/demo-bret/public/api/category/all`);
     listCategories.value = response.data.data.map(item => item.nameCategory);
-
   }catch (error){
     console.error("Error con a cargar lista categorias: ", error)
   }
@@ -79,6 +78,7 @@ const registerUser = async () => {
 onMounted(async () => {
   try {
     await getListCategories()
+    
   }
   catch (error)
   {

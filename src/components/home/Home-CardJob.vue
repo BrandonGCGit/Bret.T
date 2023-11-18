@@ -4,7 +4,7 @@ import axios from "axios";
 const listCategories = ref([])
 const getListCategories = async () => {
   try {
-    const response = await axios.get(`http://localhost/demo-bret/public/api/category/all`);
+    const response = await axios.get("http://localhost/demo-bret/public/api/category/all");
     listCategories.value = response.data.data.map(item => ({
       categoryname: item.nameCategory,
       image: '/src/assets/img/'+ item.image}));

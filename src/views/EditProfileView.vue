@@ -5,10 +5,10 @@ import router from "@/router";
 import {useRoute} from "vue-router";
 
 const formData = ref({
-  nameJob: '',
-  description: '',
-  cost: 0,
-  categories_id: ''
+  image: '',
+  full_name: '',
+  phone: 0,
+  province: ''
 });
 
 const defaultDataJob = ref({
@@ -19,19 +19,12 @@ const defaultDataJob = ref({
 })
 
 //Tiene los ids de los trabajos del usuario, tabla tbl_profile_jobs
-const listCategories = ref([])
-const getListCategories = async () => {
-  try {
-    const response = await axios.get(`http://localhost/demo-bret/public/api/category/all`);
-    listCategories.value = response.data.data.map(item => item.nameCategory);
-
-  }catch (error){
-    console.error("Error con a cargar lista categorias: ", error)
-  }
-}
+const listProvince = ref(["San José", "Alajuela", "Cartago", "Heredia", "Guanacaste", "Puntarenas", "Limón"])
 
 
-const idJob = useRoute().params.id
+
+//const idJob = useRoute().params.id
+const idJob = 1
 
 const sessionStorageData = ref({
   id: '',
@@ -47,16 +40,13 @@ const contactDefaulft = ref('');
 
 const updateUser = async () => {
   console.log("Update")
-  try {
-    const response =  await axios.get(`http://localhost/demo-bret/public/api/category_id/${formData.value.categories_id}`);
-    formData.value.categories_id = response.data.data.id;
-    
+
     try {
-      const response = await axios.put(`http://localhost/demo-bret/public/api/job/update/${idJob}`, {
-        nameJob: formData.value.nameJob, // Reemplaza con los nuevos datos
-        cost: formData.value.cost, // Reemplaza con los nuevos datos
-        description: formData.value.description, // Reemplaza con los nuevos datos
-        categories_id: formData.value.categories_id, // Reemplaza con los nuevos datos
+      const response = await axios.put(`http://localhost/demo-bret/public/api/profile/update/${idJob}`, {
+        image: formData.value.image, // Reemplaza con los nuevos datos
+        name: formData.value.full_name, // Reemplaza con los nuevos datos
+        phone_number: formData.value.phone, // Reemplaza con los nuevos datos
+        province: formData.value.province, // Reemplaza con los nuevos datos
     });
 
     router.push('/profile')
@@ -64,10 +54,18 @@ const updateUser = async () => {
     } catch (error) {
       console.error('Error al mostrar las categorias', error);
     }
+};
 
-  } catch (error) {
-    console.error('Error al editar el trabajo', error);
+function handleImageChange(event) {
+  console.log("FOTOOOOO");
+  const file = event.target.files[0];
+  if (file) {
+    // Puedes realizar alguna validación aquí si es necesario
+    formData.value.image = file.name;
+    console.log(file.name);
+    console.log(file);
   }
+  console.log(formData.value.image);
 };
 //--------------------------------------------------------------------------
 //REGISTER USER
@@ -76,7 +74,7 @@ const updateUser = async () => {
 
 onMounted(async () => {
   try {
-    await getListCategories()
+
   }
   catch (error)
   {
@@ -100,29 +98,28 @@ onMounted(async () => {
           <div class="d-flex justify-content-center mb-5">
             <RouterLink class="navbar-brand hvr-grow" to="/"><img src="@/assets/img/Bre.T.png" alt="BreT Logo"></RouterLink>
           </div>
-          <h1 class="ff-popins text-white d-flex justify-content-center mb-5">Datos de Publicación</h1>
+          <h1 class="ff-popins text-white d-flex justify-content-center mb-5">Editar Perfil</h1>
           <form @submit.prevent="updateUser" id="signUpForm" class="ff-popins mb-5">
-            <!--          Name-->
+            <!-- Image Upload -->
             <div class="form-floating mb-4">
-              <input v-model="formData.nameJob" type="text" class="form-control rounded-register-input" id="signUp-Name" placeholder="nameJob@example.com" required="">
-              <label class="opacity-50 custom-label fs-5" for="signUp-Name"><i class="bi bi-envelope pe-2 "></i>Nombre</label>
+              <input @change="handleImageChange" type="file" class="form-control rounded-register-input" id="signUp-Image" accept="image/*">
             </div>
-            <!--          Description-->
-            <div class="form-floating my-4">
-              <input v-model="formData.description" type="text" class="form-control rounded-register-input" id="signUp-Description" placeholder="nameJob@example.com" required="">
-              <label class="opacity-50 custom-label fs-5" for="signUp-Description"><i class="bi bi-envelope pe-2 "></i>Descripción</label>
+            <!--          full_name-->
+            <div class="form-floating mb-4">
+              <input v-model="formData.full_name" type="text" class="form-control rounded-register-input" id="signUp-Name" placeholder="nameJob@example.com" required="">
+              <label class="opacity-50 custom-label fs-5" for="signUp-Name"><i class="bi bi-envelope pe-2 "></i>Nombre Completo</label>
             </div>
-            <!--          Tarifa-->
+            <!--          Phone-->
             <div class="form-floating my-4">
-              <input v-model="formData.cost" type="text" class="form-control rounded-register-input" id="signUp-Cost" placeholder="nameJob@example.com" required="">
-              <label class="opacity-50 custom-label fs-5" for="signUp-Cost"><i class="bi bi-envelope pe-2 "></i>Tarifa (Colones)</label>
+              <input v-model="formData.phone" type="text" class="form-control rounded-register-input" id="signUp-Cost" placeholder="nameJob@example.com" required="">
+              <label class="opacity-50 custom-label fs-5" for="signUp-Cost"><i class="bi bi-envelope pe-2 "></i>Número de Teléfono</label>
             </div>
             <!--          Categorias-->
-            <select v-model="formData.categories_id" class="form-select my-4 rounded-register-input fs-5" aria-label="Default select example">
-              <option v-for="(categories_id, index) in listCategories" :value="categories_id" :key="index">
+            <select v-model="formData.province" class="form-select my-4 rounded-register-input fs-5" aria-label="Default select example">
+              <option v-for="(province, index) in listProvince" :value="province" :key="index">
                 <div class="opacity-50 custom-label fs-5">
                   <i class="bi bi-envelope pe-2"></i>
-                  {{ categories_id }}
+                  {{ province }}
                 </div>
               </option>
             </select>

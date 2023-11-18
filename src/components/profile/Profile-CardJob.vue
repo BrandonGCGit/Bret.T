@@ -11,6 +11,7 @@ const sessionStorageData = ref({
 defineProps({
   id: String,
   name: String,
+  categories_id: String,
   cost: String,
   description: String,
   created_at: String
@@ -55,6 +56,7 @@ onBeforeMount(async () => {
         <path d="M11.7129 3V1C11.7129 0.43925 11.292 0 10.7546 0H6.2824C5.74502 0 5.32406 0.43925 5.32406 1V3H0V4.33333H17.037V3H11.7129ZM6.74382 1.33333H10.2932V3H6.74382V1.33333Z" fill="#1C5D99"/>
       </svg></button>
     </div>
+    <p class="title-work mb-1">{{categories_id}}</p>
     <p class="color-darkblue amount-work mb-2">{{cost}} Colones</p>
     <p class="description-work">{{description}}</p>
     <div class="d-flex justify-content-between mt-5">
