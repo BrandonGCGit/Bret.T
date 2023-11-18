@@ -36,14 +36,13 @@ const editProfile = async ($id) => {
       <a @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Editar</a>
     </div>
     <div class="d-flex justify-content-between pt-4">
-      <p class="description-prof m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>
+      <p class="description-prof m-0">{{infoProfile.description}}</p>
     </div>
     <div class="d-flex justify-content-between pt-5">
       <p class="subs-prof m-0">HABILIDADES</p>
-      <a href="" class="work-prof color-darkblue p-0 m-0">Agregar</a>
     </div>
     <div class="d-flex justify-content-between pt-4">
-      <p class="description-prof m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+      <p class="description-prof m-0">{{infoProfile.abilities}}</p>
     </div>
     <div class="d-flex justify-content-start pt-5">
       <p class="subs-prof m-0">CONTACTAR</p>

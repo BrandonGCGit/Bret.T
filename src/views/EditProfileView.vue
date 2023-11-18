@@ -7,16 +7,12 @@ import {useRoute} from "vue-router";
 const formData = ref({
   image: '',
   full_name: '',
+  description: '',
+  abilities: '',
   phone: 0,
   province: ''
 });
 
-const defaultDataJob = ref({
-  nameJob: 'defaultName.png',
-  description: 'Unknown',
-  cost: 0,
-  categories_id: 'Unknown',
-})
 
 //Tiene los ids de los trabajos del usuario, tabla tbl_profile_jobs
 const listProvince = ref(["San José", "Alajuela", "Cartago", "Heredia", "Guanacaste", "Puntarenas", "Limón"])
@@ -45,6 +41,8 @@ const updateUser = async () => {
       const response = await axios.put(`http://localhost/demo-bret/public/api/profile/update/${idJob}`, {
         image: formData.value.image, // Reemplaza con los nuevos datos
         name: formData.value.full_name, // Reemplaza con los nuevos datos
+        description: formData.value.description, // Reemplaza con los nuevos datos
+        abilities: formData.value.abilities, // Reemplaza con los nuevos datos
         phone_number: formData.value.phone, // Reemplaza con los nuevos datos
         province: formData.value.province, // Reemplaza con los nuevos datos
     });
@@ -108,6 +106,16 @@ onMounted(async () => {
             <div class="form-floating mb-4">
               <input v-model="formData.full_name" type="text" class="form-control rounded-register-input" id="signUp-Name" placeholder="nameJob@example.com" required="">
               <label class="opacity-50 custom-label fs-5" for="signUp-Name"><i class="bi bi-envelope pe-2 "></i>Nombre Completo</label>
+            </div>
+            <!--          description-->
+            <div class="form-floating mb-4">
+              <input v-model="formData.description" type="text" class="form-control rounded-register-input" id="signUp-Name" placeholder="nameJob@example.com" required="">
+              <label class="opacity-50 custom-label fs-5" for="signUp-Name"><i class="bi bi-envelope pe-2 "></i>Descripción</label>
+            </div>
+            <!--          abilities-->
+            <div class="form-floating mb-4">
+              <input v-model="formData.abilities" type="text" class="form-control rounded-register-input" id="signUp-Name" placeholder="nameJob@example.com" required="">
+              <label class="opacity-50 custom-label fs-5" for="signUp-Name"><i class="bi bi-envelope pe-2 "></i>Habilidades</label>
             </div>
             <!--          Phone-->
             <div class="form-floating my-4">

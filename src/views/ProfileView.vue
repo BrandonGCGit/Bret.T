@@ -15,6 +15,8 @@ const loading = ref(false);
 const dataProfile = ref({
   id: '',
   name: '',
+  description: '',
+  abilities: '',
   phone_number: '',
   province: '',
   image: '',
@@ -46,8 +48,12 @@ const getProfileData = async () =>{
   try {
     const response = await axios.get(`http://localhost/demo-bret/public/api/profile/${sessionStorageData.value.id}`);
 
+    console.log("Axios:")
+    console.log(response)
     dataProfile.value.id = response.data.data.id
     dataProfile.value.name = response.data.data.name
+    dataProfile.value.description = response.data.data.description
+    dataProfile.value.abilities = response.data.data.abilities
     dataProfile.value.phone_number = response.data.data.phone_number
     dataProfile.value.province = response.data.data.province
     dataProfile.value.image = response.data.data.image

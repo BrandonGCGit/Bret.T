@@ -22,6 +22,8 @@ const formData = ref({
 const defaultDataProfile = ref({
   image: 'default.png',
   name: 'Unknown',
+  description: 'Unknown',
+  abilities: 'Unknown',
   phone_number: 'Unknown',
   province: 'Unknown',
   contacts_id: '',
@@ -65,6 +67,7 @@ const registerUser = async () => {
       const response =  await axios.post('http://localhost/demo-bret/public/api/register', contentRegisterUser.value);
       defaultDataProfile.value.name = formData.value.name + " " + formData.value.lastName
       defaultDataProfile.value.users_id = response.data.data.id
+      console.log("El id del usuario es de: ", response)
       //---------------------
       //Create table contacts
       //---------------------
@@ -156,14 +159,17 @@ const registerProfile = async () => {
   contentRegisterProfile.value =
       `image=${defaultDataProfile.value.image}
        &name=${defaultDataProfile.value.name}
+       &description=${''}
+       &abilities=${''}
        &phone_number=${'0'}
-       &province=${'Unknown'}
+       &province=${''}
        &contacts_id=${defaultDataProfile.value.contacts_id}
        &ratings_id=${defaultDataProfile.value.ratings_id}
        &users_id=${defaultDataProfile.value.users_id}`
 
   try {
     console.log("Datos default: " , contentRegisterProfile.value)
+
     const response = await axios.post('http://localhost/demo-bret/public/api/profile/store', contentRegisterProfile.value);
     //Guardamos el id para darlo al profile
     console.log("Creacion del perfil: ", response.data)
