@@ -23,8 +23,8 @@ const listProvince = ref(["San José", "Alajuela", "Cartago", "Heredia", "Guanac
 
 
 
-//const idJob = useRoute().params.id
-const idJob = 1
+const idJob = useRoute().params.id
+// const idJob = 1
 
 const sessionStorageData = ref({
   id: '',

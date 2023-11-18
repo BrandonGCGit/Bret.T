@@ -7,6 +7,7 @@ defineProps({
   infoProfile: ref([])
 })
 const editProfile = async ($id) => {
+  console.log("ID PROFILE CARD-INFO",$id)
   router.push(`/editProfile/${$id}`)
 }
 
