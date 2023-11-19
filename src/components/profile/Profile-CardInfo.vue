@@ -4,7 +4,8 @@ import {ref} from "vue";
 import router from "@/router";
 
 defineProps({
-  infoProfile: ref([])
+  infoProfile: ref([]),
+  isLogged: Boolean
 })
 const editProfile = async ($id) => {
   console.log("ID PROFILE CARD-INFO",$id)
@@ -33,7 +34,7 @@ const editProfile = async ($id) => {
     </div>
     <div class="d-flex justify-content-between pt-5">
       <p class="subs-prof m-0">DESCRIPCIÓN</p>
-      <a @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Editar</a>
+      <a v-if="isLogged" @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Editar</a>
     </div>
     <div class="d-flex justify-content-between pt-4">
       <p class="description-prof m-0">{{infoProfile.description}}</p>

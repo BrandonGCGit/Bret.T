@@ -2,15 +2,13 @@
 import ProfileNavbar from "@/components/layout/ProfileNavbar.vue";
 import ProfileCardJobList from "@/components/profile/Profile-CardJobList.vue";
 import ProfileCardInfo from "@/components/profile/Profile-CardInfo.vue";
-import {onBeforeMount, onMounted, ref, watch} from "vue";
+import {onBeforeMount, ref} from "vue";
 import axios from "axios";
 import router from "@/router";
-
-
-
-
+import {useRoute} from "vue-router";
 
 const loading = ref(false);
+let isLogged = ref(false);
 
 const dataProfile = ref({
   id: '',
@@ -42,14 +40,27 @@ function addNewJob(){
   router.push(`/addJob/${dataProfile.value.id}`)
 }
 
+function userIsLogged(){
+  if (sessionStorageData.value.id === null)
+  {
+    sessionStorageData.value.id = idProfile
+    isLogged.value = false
+  }
+  else
+  {
+    isLogged.value = true
+  }
+
+}
+
+
+const idProfile = useRoute().params.id
 
 const getProfileData = async () =>{
   loading.value = true;
   try {
     const response = await axios.get(`http://localhost/demo-bret/public/api/profile/${sessionStorageData.value.id}`);
 
-    console.log("Axios:")
-    console.log(response)
     dataProfile.value.id = response.data.data.id
     dataProfile.value.name = response.data.data.name
     dataProfile.value.description = response.data.data.description
@@ -106,6 +117,7 @@ onBeforeMount(async () => {
   sessionStorageData.value.id = sessionStorage.getItem('id')
   sessionStorageData.value.token = sessionStorage.getItem('token')
 
+  userIsLogged()
 
   try {
     await getProfileData()
@@ -142,22 +154,27 @@ onBeforeMount(async () => {
     <div class="col-10 container-fluid pt-4">
       <div class="d-flex justify-content-start">
         <div class="card-profile bg-light-blue">
-          <p class="title-pf">Hola, {{dataProfile.name}}</p>
-          <p class="pub-pf">Crea una publicaciones para mostrar tus habilidades y conseguir clientes </p>
+
+          <p v-if="isLogged" class="title-pf">Hola, {{dataProfile.name}}</p>
+          <p v-else  class="title-pf">Soy {{dataProfile.name}} </p>
+
+          <p v-if="isLogged" class="pub-pf">Crea una publicaciones para mostrar tus habilidades y conseguir clientes </p>
 
           <div class="d-flex justify-content-end">
-            <button @click="addNewJob()" class="btn-pub text-white">Publicar</button>
+            <button v-if="isLogged" @click="addNewJob()" class="btn-pub text-white">Publicar</button>
           </div>
         </div>
       </div>
       <div class="d-flex justify-content-between">
         <div class="col-6">
           <ProfileCardJobList
+              :is-logged = isLogged
               v-if="listJobs.length > 0"
               :list-jobs="listJobs" ></ProfileCardJobList>
           <div v-else>Cargando Datos...</div>
         </div>
           <ProfileCardInfo
+              :is-logged="isLogged"
               :info-profile="dataProfile"
           ></ProfileCardInfo>
       </div>

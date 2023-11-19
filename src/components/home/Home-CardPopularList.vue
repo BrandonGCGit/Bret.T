@@ -16,8 +16,7 @@ import HomeCardPoular from "@/components/home/Home-CardPoular.vue";
           <div class="card-group mx-5 my-3">
             <HomeCardPoular></HomeCardPoular>
           </div>
-          <a class="text-decoration-none text-black footer-font" href="">Ver todos</a>
-
+<!--          <a class="text-decoration-none text-black footer-font" href="">Ver todos</a>-->
         </div>
       </div>
     </div>

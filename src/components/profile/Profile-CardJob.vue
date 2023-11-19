@@ -14,7 +14,8 @@ defineProps({
   categories_id: String,
   cost: String,
   description: String,
-  created_at: String
+  created_at: String,
+  isLogged: Boolean
 })
 const editJob = async ($id) => {
   router.push(`/editJob/${$id}`)
@@ -48,7 +49,7 @@ onBeforeMount(async () => {
   <div class="card-works shadow-lg p-3 mb-5 bg-body-tertiary rounded mt-3">
     <div class="d-flex justify-content-between">
       <p class="title-work pt-4 mb-1">{{name}}</p>
-      <button @click="deleteJob(id)" class="btn-delete pt-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
+      <button v-if="isLogged" @click="deleteJob(id)" class="btn-delete pt-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
         <path d="M1.41971 19C1.41758 19.2628 1.52652 19.5157 1.72263 19.7031C1.91875 19.8906 2.18602 19.9973 2.46584 20H14.5711C14.8509 19.9973 15.1182 19.8906 15.3143 19.7031C15.5104 19.5157 15.6193 19.2628 15.6172 19V5.66667H1.41971V19ZM2.83946 7H14.1975V18.6667H2.83946V7Z" fill="#1C5D99"/>
         <path d="M6.03401 8.33333H4.61426V16.6667H6.03401V8.33333Z" fill="#1C5D99"/>
         <path d="M9.22834 8.33333H7.80859V16.6667H9.22834V8.33333Z" fill="#1C5D99"/>
@@ -62,8 +63,8 @@ onBeforeMount(async () => {
     <div class="d-flex justify-content-between mt-5">
       <p class="date-work">Publicado el {{created_at}}</p>
       <div class="d-flex gap-4">
-        <button class="btn-imp text-white">Impulsar</button>
-        <button @click="editJob(id)" class="btn-edit text-dark">Editar detalles</button>
+        <button v-if="isLogged" class="btn-imp text-white">Impulsar</button>
+        <button v-if="isLogged" @click="editJob(id)" class="btn-edit text-dark">Editar detalles</button>
       </div>
     </div>
   </div>

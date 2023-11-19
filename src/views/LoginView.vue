@@ -40,7 +40,7 @@ const loginUser = async () => {
       sessionStorage.setItem('id', item.id);
       sessionStorage.setItem('token', item.token);
 
-      router.push('/profile')
+      router.push(`/profile/${item.id}`)
     }catch (error){
       console.error('Error al iniciar sesión', error.response.data.data.error)
       if (error.response.data.data.error === "Unauthorised")

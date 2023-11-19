@@ -4,11 +4,12 @@ import {onBeforeMount, onMounted, ref, watch} from "vue";
 import axios from "axios";
 
 defineProps({
-  listJobs: Array
+  listJobs: Array,
+  isLogged: Boolean
 })
 
 
-function getCategoryName($number) {
+function getCategoryName ($number) {
   console.log(keyValueObject);
   for (let i = 0; i < keyValueObject.length; i++) {
     if(keyValueObject[i] == $number) {
@@ -19,6 +20,10 @@ function getCategoryName($number) {
 
 
 const keyValueObject = []
+
+onBeforeMount(async () =>{
+
+})
 
 onMounted(async () => {
   try {
@@ -45,9 +50,10 @@ onMounted(async () => {
 
   <div v-for="job in listJobs" :key="job.id">
     <ProfileCardJob
+        :is-logged="this.isLogged"
         :id="job.id"
         :name="job.nameJob"
-        :categories_id="getCategoryName(job.categories_id)"
+        :categories_id=" getCategoryName(job.categories_id)"
         :cost="job.cost"
         :description="job.description"
         :created_at="job.created_at"
