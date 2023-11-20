@@ -33,7 +33,7 @@
 
 .card-works{
     width: 56.5rem;
-    height: 20.3125rem;
+    height: auto;
     background: var(--clr-white);
     border-radius: 1.25rem;
     padding-left: 2rem !important;
@@ -63,7 +63,7 @@
 
     .card-works{
         width: 43.5rem;
-        height: 20.3125rem;
+        height: auto;
         background: var(--clr-white);
         border-radius: 1.25rem;
         padding-left: 2rem !important;
