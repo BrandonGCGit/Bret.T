@@ -1,5 +1,27 @@
 <script setup>
 
+import {ref} from 'vue';
+import {useRouter} from "vue-router";
+import axios from 'axios';
+import {useNotification} from "@/stores/notification";
+
+const formData = ref({
+  email: ""
+});
+
+const contactDefaulft = ref('');
+const recoverPassword = async () => {
+
+  try {
+    contactDefaulft.value = `email=${formData.value.email}`
+    const response = await axios.post('http://localhost/demo-bret/public/api/recoverpassword', contactDefaulft.value);
+    console.log(response)
+  } catch (error) {
+    console.error('Error al crear la tabla', error);
+  }
+
+}
+
 </script>
 
 <template>
@@ -14,14 +36,14 @@
           <RouterLink class="navbar-brand hvr-grow" to="/"><img src="@/assets/img/Bre.T.png" alt="Bre.T Logo"></RouterLink>
         </div>
         <h1 class="text-decoration-none text-black footer-font d-flex justify-content-center mb-5">¿Has olvidado tu contraseña?</h1>
-        <form id="logInForm" class="ff-popins mb-5">
+        <form @submit.prevent id="logInForm" class="ff-popins mb-5">
           <!--          Email-->
           <div class="form-floating my-4">
-            <input type="email" class="form-control rounded-register-input px-5" id="logIn-Email" placeholder="name@example.com">
+            <input v-model="formData.email" type="email" class="form-control rounded-register-input" id="signUp-Email" placeholder="name@example.com" required="">
             <label class="opacity-50 custom-label fs-5" for="recover-Email"><i class="bi bi-envelope pe-2 "></i>Correo de recuperación</label>
           </div>
           <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Enviar</button>
+            <button @click="recoverPassword" type="submit" class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Enviar</button>
           </div>
         </form>
       </div>
