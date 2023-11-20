@@ -68,12 +68,12 @@ onBeforeMount(async () => {
           <ul class="navbar-nav gap-4">
             <li class="nav-item">
               <RouterLink
+
                   v-if="!sessionStorageData.token"
                   class="nav-link active hvr-underline-from-left text-white fw-light fs-5" to="login">Iniciar Sesión</RouterLink>
               <RouterLink
                   v-else
                   class="nav-link active hvr-underline-from-left text-white fw-light fs-5" to="profile">Perfil</RouterLink>
-
             </li>
             <li class="nav-item">
               <RouterLink

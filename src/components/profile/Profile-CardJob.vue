@@ -9,7 +9,7 @@ const sessionStorageData = ref({
 })
 
 defineProps({
-  id: String,
+  id: Number,
   name: String,
   categories_id: String,
   cost: String,
@@ -23,8 +23,8 @@ const editJob = async ($id) => {
 
 
 const deleteJob = async ($id) => {
-  console.log("ID de la Card", $id);
-  console.log("ID del usuario", sessionStorageData.value.id);
+  // console.log("ID de la Card", $id);
+  // console.log("ID del usuario", sessionStorageData.value.id);
   
   try {
     const response = await axios.get(`http://localhost/demo-bret/public/api/profile_job/destroy/` + $id);

@@ -10,7 +10,7 @@ defineProps({
 
 
 function getCategoryName ($number) {
-  console.log(keyValueObject);
+  // console.log(keyValueObject);
   for (let i = 0; i < keyValueObject.length; i++) {
     if(keyValueObject[i] == $number) {
       return keyValueObject[i+1]

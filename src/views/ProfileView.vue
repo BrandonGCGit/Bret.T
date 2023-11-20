@@ -145,7 +145,9 @@ onBeforeMount(async () => {
 
 <template>
 
-  <ProfileNavbar :token="sessionStorageData.token"></ProfileNavbar>
+  <ProfileNavbar
+      :is-logged = isLogged
+      :token="sessionStorageData.token"></ProfileNavbar>
 
 
   <!--Info User-->
