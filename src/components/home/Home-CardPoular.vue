@@ -7,7 +7,7 @@ const getListProfiles = async () => {
   try {
     const response = await axios.get(`http://localhost/demo-bret/public/api/profile/all`);
     /*listProfiles.value = response.data.data.map(item => item.nameCategory);*/
-    console.log("Response", response.data)
+    // console.log("Response", response.data)
     const profileData = response.data.data.map(item => ({
       id: item.users_id,
       nameProfile: item.name,

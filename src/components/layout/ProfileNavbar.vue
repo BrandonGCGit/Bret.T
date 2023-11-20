@@ -4,9 +4,9 @@ import {ref} from "vue";
 import axios from "axios";
 import router from "@/router";
 
-// defineProps({
-//   token: ref('')
-// })
+defineProps({
+  isLogged: Boolean
+})
 
 const token = ref(sessionStorage.getItem('token'))
 
@@ -56,10 +56,11 @@ const logOut = async () => {
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active text-dark fw-light fs-5 hvr-underline-from-left custom-mg" aria-current="page" href="#">Ofertas</a>
+              <a  v-if="isLogged" class="nav-link active text-dark fw-light fs-5 hvr-underline-from-left custom-mg" aria-current="page" href="#">Ofertas</a>
+              <a v-else class="nav-link active text-dark fw-light fs-5 hvr-underline-from-left custom-mg" href="#" >Contratar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-dark fw-light fs-5 hvr-underline-from-left" aria-current="page" href="#">Configuraciones</a>
+              <a v-if="isLogged" class="nav-link active text-dark fw-light fs-5 hvr-underline-from-left" aria-current="page" href="#">Configuraciones</a>
             </li>
           </ul>
           <ul class="navbar-nav gap-4 align-items-center">
