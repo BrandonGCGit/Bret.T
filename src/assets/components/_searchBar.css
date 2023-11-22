@@ -59,6 +59,16 @@
   background: #1C5D99;
 }
 
+.search a {
+  position: absolute;
+  top: 0.6rem;
+  right: 1rem;
+  height: 59px;
+  width: 96px;
+  border-radius: 20px;
+  background: #1C5D99;
+}
+
 .form-control::placeholder {
   color: #FFFFFF;
 }

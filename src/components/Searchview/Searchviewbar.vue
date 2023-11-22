@@ -20,8 +20,7 @@
             <div class="search ">
               <input type="text" class="form-control search_bar-font"
                      placeholder="&#xf002;   Busca cualquier sevicio...">
-              <!--<button class="btn btn-primary font-weight-bold search_btn-font">Buscar</button>-->
-              <!--<a href="" class="btn btn-primary font-weight-bold search_btn-font d-flex align-content-center justify-content-center" >Buscar</a>-->
+              
               <RouterLink
                 class="btn btn-primary font-weight-bold search_btn-font d-flex align-content-center justify-content-center" to="search" >Buscar
               </RouterLink>

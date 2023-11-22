@@ -14,6 +14,7 @@
 @import "./components/_components.css";
 @import "./components/_searchBar.css";
 @import "./components/_dropdowns.css";
+@import "./components/_loader.css";
 
 @import "./layout/_footer.css";
 

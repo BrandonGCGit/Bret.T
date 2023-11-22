@@ -5,10 +5,12 @@ import HomeAboutUs from "@/components/home/Home-AboutUs.vue";
 import HomeCardJobList from "@/components/home/Home-CardJobList.vue";
 import HomeCardPopularList from "@/components/home/Home-CardPopularList.vue";
 import MainFooter from "@/components/layout/MainFooter.vue";
+import Loader from "@/components/layout/Loader.vue";
 </script>
 
 <template>
   <main>
+    <Loader></Loader>
     <MainNavbar></MainNavbar>
     <HomeSearchBar></HomeSearchBar>
     <HomeAboutUs></HomeAboutUs>

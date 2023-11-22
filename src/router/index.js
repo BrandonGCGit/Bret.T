@@ -57,6 +57,11 @@ const router = createRouter({
       path: '/editProfile/:id',
       name: 'editProfile',
       component:() => import('../views/EditProfileView.vue')
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component:() => import('../views/SearchView.vue')
     }
   ]
 })
