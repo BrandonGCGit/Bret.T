@@ -67,7 +67,7 @@ const getProfileData = async () =>{
     dataProfile.value.abilities = response.data.data.abilities
     dataProfile.value.phone_number = response.data.data.phone_number
     dataProfile.value.province = response.data.data.province
-    dataProfile.value.image = response.data.data.image
+    dataProfile.value.image = '/src/assets/img/'+ response.data.data.image
     dataProfile.value.ratings_id = response.data.data.ratings_id
     dataProfile.value.contacts_id = response.data.data.contacts_id
     dataProfile.value.users_id = response.data.data.users_id
@@ -147,7 +147,8 @@ onBeforeMount(async () => {
 
   <ProfileNavbar
       :is-logged = isLogged
-      :token="sessionStorageData.token"></ProfileNavbar>
+      :token="sessionStorageData.token"
+      :infoProfile = "dataProfile"></ProfileNavbar>
 
 
   <!--Info User-->
@@ -160,7 +161,8 @@ onBeforeMount(async () => {
           <p v-if="isLogged" class="title-pf">Hola, {{dataProfile.name}}</p>
           <p v-else  class="title-pf">Soy {{dataProfile.name}} </p>
 
-          <p v-if="isLogged" class="pub-pf">Crea una publicaciones para mostrar tus habilidades y conseguir clientes </p>
+          <p v-if="isLogged" class="pub-pf">Crea una publicaciones para mostrar tus habilidades y conseguir clientes</p>
+          <p v-else="isLogged" class="msg-jobs pdd-msg">Para establecer comunicación con este usuario, se requiere utilizar los canales de contacto oficialmente registrados.</p>
 
           <div class="d-flex justify-content-end">
             <button v-if="isLogged" @click="addNewJob()" class="btn-pub text-white">Publicar</button>
@@ -173,7 +175,7 @@ onBeforeMount(async () => {
               :is-logged = isLogged
               v-if="listJobs.length > 0"
               :list-jobs="listJobs" ></ProfileCardJobList>
-          <div v-else>Cargando Datos...</div>
+          <div v-else class="mt-3 msg-jobs">Actualmente no se ha registrado ningún trabajo por parte de este usuario. <span class="fw-semibold">¡Estamos ansiosos por ver las futuras contribuciones que pueda compartir!</span></div>
         </div>
           <ProfileCardInfo
               :is-logged="isLogged"

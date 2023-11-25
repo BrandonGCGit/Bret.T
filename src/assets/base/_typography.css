@@ -70,7 +70,7 @@
 .subs-prof{
   font-family: var(--ff-pop);
   font-size: var(--fs-23);
-  font-weight: var(--fw-med);
+  font-weight: var(--fw-sbold);
   margin-top: -15px;
 }
 
@@ -104,6 +104,13 @@
   font-family: var(--ff-pop);
   font-size: var(--fs-xsm);
   font-weight: var(--fw-reg);
+}
+
+.msg-jobs{
+  font-family: var(--ff-pop);
+  font-size: var(--fs-rg);
+  font-weight: var(--fw-reg);
+  color: hsla(0, 0%, 23%, 1);
 }
 
 @media (max-width: 1400px) {

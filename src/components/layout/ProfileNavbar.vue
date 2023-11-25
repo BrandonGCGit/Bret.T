@@ -5,7 +5,8 @@ import axios from "axios";
 import router from "@/router";
 
 defineProps({
-  isLogged: Boolean
+  isLogged: Boolean,
+  infoProfile: ref([])
 })
 
 const token = ref(sessionStorage.getItem('token'))
@@ -46,7 +47,7 @@ const logOut = async () => {
   <div class="col-12 p-0 m-0">
     <nav class="navbar navbar-expand-lg ff-popins pt-3">
       <div class="col-10 container-fluid">
-        <RouterLink  to="/" class="navbar-brand hvr-grow" href="#"><img  src="@/assets/img/logo-profile2.png" alt="Logo Bre.T"></RouterLink>
+        <RouterLink  to="/" class="navbar-brand hvr-grow" href="#"><img src="@/assets/img/logo-profile2.png" alt="Logo Bre.T"></RouterLink>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -55,13 +56,13 @@ const logOut = async () => {
         <button class="btn-navprofile"><i class="bi bi-list text-dark list-profile"></i></button>
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a  v-if="isLogged" class="nav-link active text-dark fw-light fs-5 hvr-underline-from-left custom-mg" aria-current="page" href="#">Ofertas</a>
               <a v-else class="nav-link active text-dark fw-light fs-5 hvr-underline-from-left custom-mg" href="#" >Contratar</a>
             </li>
             <li class="nav-item">
               <a v-if="isLogged" class="nav-link active text-dark fw-light fs-5 hvr-underline-from-left" aria-current="page" href="#">Configuraciones</a>
-            </li>
+            </li>-->
           </ul>
           <ul class="navbar-nav gap-4 align-items-center">
             <li v-if="token" class="nav-item">
@@ -80,7 +81,7 @@ const logOut = async () => {
               </svg></a>
             </li>
             <li class="nav-item">
-              <img src="@/assets/img/hombre-profile.jpeg" class="icon-nav" alt="hombre-profile">
+              <img v-if="isLogged" :src="infoProfile.image" class="icon-nav" alt="hombre-profile">
             </li>
           </ul>
         </div>
