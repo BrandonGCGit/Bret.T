@@ -1,44 +1,30 @@
 <script setup>
 
-import {ref} from "vue";
+import {onBeforeMount, onMounted, ref} from "vue";
 import axios from "axios";
 import router from "@/router";
 
 defineProps({
   isLogged: Boolean,
-  infoProfile: ref([])
+  infoProfile: ref([]),
+  imageSession: ref('')
 })
 
-const token = ref(sessionStorage.getItem('token'))
 
-const logOut = async () => {
-  try {
-    // const token = sessionStorage.getItem('token'); // Reemplaza con tu token real
+const sessionStorageData = ref({
+  id: '',
+  token: ''
+})
 
-    // content.value = `email=${formData.value.email} &password=${formData.value.password}`
-    // const content = `token=`
+onBeforeMount(async () => {
 
-    console.log("Token: " , sessionStorage.getItem('token'))
-    // 'Authorization': Bearer ${localStorage.getItem('access_token')}
-    const config = {
-      headers: {
-        Accept: 'application/json',
-        // Authorization: `Bearer ${token}`,
-        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
-      },
-    };
+  // Almacenar los datos del Session
+  sessionStorageData.value.id = sessionStorage.getItem('id')
+  sessionStorageData.value.token = sessionStorage.getItem('token')
 
-    const response = await axios.get('http://localhost/demo-bret/public/api/logout', config);
-    console.log("Response del LotOut", response)
-    // Realiza otras operaciones con la respuesta si es necesario.
-    sessionStorage.clear()
-    location.reload()
-    await router.push('/')
 
-  } catch (error) {
-    console.error('Error con cargar datos del profile: ', error);
-  }
-};
+
+});
 
 </script>
 
@@ -81,7 +67,7 @@ const logOut = async () => {
               </svg></a>
             </li>
             <li class="nav-item">
-              <img v-if="isLogged" :src="infoProfile.image" class="icon-nav" alt="hombre-profile">
+                <img v-if="isLogged" :src="imageSession" class="icon-nav" alt="hombre-profile">
             </li>
           </ul>
         </div>
