@@ -105,6 +105,11 @@
   font-weight: var(--fw-reg);
   text-align: justify;
 }
+.description-work2{
+  font-family: var(--ff-pop);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-reg);
+}
 
 .date-work{
   font-family: var(--ff-pop);

@@ -12,6 +12,18 @@
   border: none;
 }
 
+.btn-contacto{
+  width: 9.5625rem;
+  height: 2.4375rem;
+  background: var(--clr-white-blue);
+  color: var(--clr-black);
+  border-radius: 1.25rem;
+  font-family: var(--ff-pop);
+  font-size: var(--fs-20);
+  font-weight: var(--fw-regular);
+  
+}
+
 .btn-navprofile{
   border: none;
   background: transparent;
@@ -75,6 +87,18 @@
   font-size: var(--fs-xsm);
   font-weight: var(--fw-sbold);
   margin-top: -10px;
+}
+
+.btn-dropdown{
+  border: none;
+  width: 12rem;
+  height: 2.80625rem;
+  border-radius: 1.25rem;
+  background: var(--clr-white-blue);
+  font-family: var(--ff-pop);
+  font-size: var(--fs-xsm);
+  font-weight: var(--fw-sbold);
+  
 }
 
 /* Large devices (desktops, less than 1400px) */
