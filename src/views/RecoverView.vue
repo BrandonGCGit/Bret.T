@@ -9,6 +9,10 @@ const formData = ref({
   email: ""
 });
 
+
+//Pinia Store
+const notificationStore = useNotification()
+
 const contactDefaulft = ref('');
 const recoverPassword = async () => {
 
@@ -16,6 +20,7 @@ const recoverPassword = async () => {
     contactDefaulft.value = `email=${formData.value.email}`
     const response = await axios.post('http://localhost/demo-bret/public/api/recoverpassword', contactDefaulft.value);
     console.log(response)
+    notificationStore.notifyNormalToast("success","Su nueva contraseña es: " + response.data.password, 99999999999, false)
   } catch (error) {
     console.error('Error al crear la tabla', error);
   }
@@ -40,7 +45,7 @@ const recoverPassword = async () => {
           <!--          Email-->
           <div class="form-floating my-4">
             <input v-model="formData.email" type="email" class="form-control rounded-register-input" id="signUp-Email" placeholder="name@example.com" required="">
-            <label class="opacity-50 custom-label fs-5" for="recover-Email"><i class="bi bi-envelope pe-2 "></i>Correo de recuperación</label>
+            <label class="opacity-50 custom-label fs-5" for="recover-Email"><i class="bi bi-envelope pe-2 "></i>Email</label>
           </div>
           <div class="d-flex justify-content-center">
             <button @click="recoverPassword" type="submit" class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Enviar</button>

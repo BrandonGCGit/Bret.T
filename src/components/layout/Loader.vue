@@ -44,6 +44,7 @@ export default {
 
 <style scoped>
 
+
 .boxes {
   z-index: 1;
   --size: 32px;

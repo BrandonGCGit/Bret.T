@@ -6,6 +6,7 @@ import {onBeforeMount, ref} from "vue";
 import axios from "axios";
 import router from "@/router";
 import {useRoute} from "vue-router";
+import Loader from "@/components/layout/Loader.vue";
 
 const loading = ref(false);
 let isLogged = ref(false);
@@ -175,6 +176,7 @@ onBeforeMount(async () => {
               :is-logged = isLogged
               v-if="listJobs.length > 0"
               :list-jobs="listJobs" ></ProfileCardJobList>
+<!--          <loader v-else/>-->
           <div v-else class="mt-3 msg-jobs">Actualmente no se ha registrado ningún trabajo por parte de este usuario. <span class="fw-semibold">¡Estamos ansiosos por ver las futuras contribuciones que pueda compartir!</span></div>
         </div>
           <ProfileCardInfo

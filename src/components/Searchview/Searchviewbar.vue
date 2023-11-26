@@ -22,6 +22,7 @@ const getListCategories = async () => {
 const getListJobs = async () => {
   try {
     const response = await axios.get("http://localhost/demo-bret/public/api/job/all");
+    console.log("JOBS",response.data)
     listJobs.value = response.data.data.map(item => ({
       id: item.id,
       nameJob: item.nameJob,
@@ -91,6 +92,11 @@ async function onClickSearchJob(letter) {
   }
 };
 
+function getProfileId (id){
+
+
+
+}
 
 
 </script>
@@ -104,12 +110,6 @@ async function onClickSearchJob(letter) {
           <h1 class="my-4 title-font text-center">¿Ofreces servicios o estás buscando contratar servicios en Costa Rica?
           </h1>
           <div class="col-md-10">
-            <p class="my-5 text-center subtitle-font">Explore nuestra selección de servicios y
-              encuentre
-              exactamente lo que necesita para sus proyectos. Nuestra búsqueda avanzada le permite
-              filtrar por
-              categoría, ubicación, experiencia, etc.</p>
-
             <!-- SEARCHBAR-->
             <div class="search">
               <form v-on:submit.prevent="onClickSearchJob(letter)">
@@ -169,11 +169,9 @@ async function onClickSearchJob(letter) {
                 <h5 class="title-work">{{ n.nameJob }}</h5>
                 <p class="description-work2">{{ n.description }}</p>
                 <p class="amount-work">{{ n.cost }}/h</p>
-                <a href="#" class="btn-contacto btn">Enviar mensaje</a>
+                <button @click="getProfileId(n.id)" class="btn-contacto btn">Ver Perfil</button>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>

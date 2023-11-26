@@ -22,11 +22,11 @@ const loginUser = async () => {
 
   if (!formData.value.email)
   {
-    notificationStore.notifyNormalToast("warning","El campo del email esta vacío")
+    notificationStore.notifyNormalToast("warning","El campo del email esta vacío", 3000, true)
   }
   else if (!formData.value.password)
   {
-    notificationStore.notifyNormalToast("warning", "El campo de la contraseña esta vacío")
+    notificationStore.notifyNormalToast("warning", "El campo de la contraseña esta vacío", )
   }
   else
   {

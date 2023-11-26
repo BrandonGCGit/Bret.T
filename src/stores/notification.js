@@ -4,12 +4,12 @@ import {toast} from "vue3-toastify";
 export const useNotification = defineStore('notification', {
 
     actions:{
-        notifyNormalToast(type, msg){
+        notifyNormalToast(type, msg, time, close){
             toast(msg,{
                 type: type,
-                autoClose: 3000,
+                autoClose: time,
                 position: toast.POSITION.TOP_RIGHT,
-                closeOnClick: true,
+                closeOnClick: close,
                 transition: "slide",
             })
         },
