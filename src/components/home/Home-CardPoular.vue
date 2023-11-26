@@ -33,9 +33,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <router-link :to="{name: 'profile', params: {id: item.id}}"
-               class="card mx-3 rounded-3 my-3 profile-homecard"
-               v-for="(item, index) in listProfiles.slice(0, 8)" v-bind:key="index">
+  <router-link :to="{name: 'profile', params: {id: item.id}}" class="card mx-3 rounded-3 my-3 profile-homecard"  v-for="(item, index) in listProfiles.slice(0, 8)" v-bind:key="index">
     <img src="@/assets/img/logo-profile.png" class="card-img-top img-cards mx-auto mt-5 mb-4"
          alt="a">
     <div class="card-body">
