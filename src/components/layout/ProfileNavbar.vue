@@ -6,7 +6,8 @@ import router from "@/router";
 
 defineProps({
   isLogged: Boolean,
-  infoProfile: ref([])
+  infoProfile: ref([]),
+  imageSession: ref('')
 })
 
 const token = ref(sessionStorage.getItem('token'))
@@ -81,7 +82,7 @@ const logOut = async () => {
               </svg></a>
             </li>
             <li class="nav-item">
-              <img v-if="isLogged" :src="infoProfile.image" class="icon-nav" alt="hombre-profile">
+              <img v-if="isLogged" :src="imageSession" class="icon-nav" alt="hombre-profile">
             </li>
           </ul>
         </div>

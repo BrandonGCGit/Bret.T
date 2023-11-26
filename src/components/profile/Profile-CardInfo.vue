@@ -7,7 +7,8 @@ defineProps({
   infoProfile: ref([]),
   isLogged: Boolean,
   dataStatus: Boolean,
-  dataShow: Boolean
+  dataShow: Boolean,
+  showmp: Boolean
 })
 const editProfile = async ($id) => {
   console.log("ID PROFILE CARD-INFO",$id)
@@ -35,8 +36,8 @@ const editProfile = async ($id) => {
       <p class="subs-prof color-darkblue"><i class="bi bi-geo-alt icon-ubi text-dark me-1"></i>{{infoProfile.province}}</p>
     </div>
     
-    <div class="d-flex justify-content-center pt-3">
-      <button v-if="isLogged, dataStatus" @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Añadir información</button>
+    <div v-if="isLogged, dataStatus, showmp" class="d-flex justify-content-center pt-3">
+      <button @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Añadir información</button>
     </div>
     <div v-if="dataShow" class="d-flex justify-content-between pt-3">
       <p class="subs-prof m-0">DESCRIPCIÓN</p>

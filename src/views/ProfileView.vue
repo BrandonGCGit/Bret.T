@@ -11,6 +11,9 @@ const loading = ref(false);
 let isLogged = ref(false);
 let isDataNull = ref(true);
 let showInfo = ref(false);
+let showmyProfile = ref(false);
+let idShowProfile = 0;
+let imgsession = ref('');
 
 const dataProfile = ref({
   id: '',
@@ -45,12 +48,19 @@ function addNewJob(){
 function userIsLogged(){
   if (sessionStorageData.value.id === null)
   {
-    sessionStorageData.value.id = idProfile
+    idShowProfile = idProfile
     isLogged.value = false
   }
   else
   {
     isLogged.value = true
+      if(sessionStorageData.value.id != idProfile){
+        idShowProfile = idProfile
+        showmyProfile = false
+      }else{
+        idShowProfile = sessionStorageData.value.id;
+        showmyProfile = true
+      }
   }
 
 }
@@ -74,7 +84,7 @@ const idProfile = useRoute().params.id
 const getProfileData = async () =>{
   loading.value = true;
   try {
-    const response = await axios.get(`http://localhost/demo-bret/public/api/profile/${sessionStorageData.value.id}`);
+    const response = await axios.get(`http://localhost/demo-bret/public/api/profile/${idShowProfile}`);
 
     dataProfile.value.id = response.data.data.id
     dataProfile.value.name = response.data.data.name
@@ -88,6 +98,7 @@ const getProfileData = async () =>{
     dataProfile.value.users_id = response.data.data.users_id
 
     userData()
+    getImageProfile()
 
     // console.log("Full name response?: ", response.data.data.name)
     // console.log("Full name?: ", dataProfile.value)
@@ -96,6 +107,18 @@ const getProfileData = async () =>{
     console.error("Error con cargar datos del profile: ", error)
   }finally {
     loading.value = false;
+  }
+}
+
+const getImageProfile = async () =>{
+  if(isLogged.value){
+    try {
+      const response = await axios.get(`http://localhost/demo-bret/public/api/profile/${sessionStorageData.value.id}`);
+      imgsession = '/src/assets/img/'+ response.data.data.image
+
+    }catch (error){
+      console.error("Error con cargar datos del profile: ", error)
+    }
   }
 }
 
@@ -165,7 +188,8 @@ onBeforeMount(async () => {
   <ProfileNavbar
       :is-logged = isLogged
       :token="sessionStorageData.token"
-      :infoProfile = "dataProfile"></ProfileNavbar>
+      :infoProfile = "dataProfile"
+      :imageSession="imgsession"></ProfileNavbar>
 
 
   <!--Info User-->
@@ -182,7 +206,7 @@ onBeforeMount(async () => {
           <p v-else="isLogged" class="msg-jobs pdd-msg">Para establecer comunicación con este usuario, se requiere utilizar los canales de contacto oficialmente registrados.</p>
 
           <div class="d-flex justify-content-end">
-            <button v-if="isLogged" @click="addNewJob()" class="btn-pub text-white">Publicar</button>
+            <button v-if="isLogged, showmyProfile" @click="addNewJob()" class="btn-pub text-white">Publicar</button>
           </div>
         </div>
       </div>
@@ -199,6 +223,7 @@ onBeforeMount(async () => {
               :is-logged="isLogged"
               :dataStatus="isDataNull"
               :dataShow="showInfo"
+              :showmp="showmyProfile"
           ></ProfileCardInfo>
       </div>
     </div>
