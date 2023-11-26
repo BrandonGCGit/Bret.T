@@ -134,7 +134,7 @@ onMounted(async () => {
             <div class="d-flex justify-content-center">
               <button
                   type="submit"
-                  class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Agregar Trabajo
+                  class="btn btn-primary rounded-4 w-100 bg-navbar-blue text-white border-0 ff-popins fw-light fs-5 hvr-sweep-to-right clr-dark-yellow">Continuar
               </button>
             </div>
           </form>

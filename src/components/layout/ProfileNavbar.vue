@@ -53,7 +53,7 @@ const logOut = async () => {
                 aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <button class="btn-navprofile"><i class="bi bi-list text-dark list-profile"></i></button>
+        <p class="btn-navprofile mb-0"><i class="bi bi-list text-dark list-profile"></i></p>
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <!--<li class="nav-item">

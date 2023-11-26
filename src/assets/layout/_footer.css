@@ -10,6 +10,10 @@
   font-weight: 500;
 }
 
+.footer-font:hover{
+  color: hsla(42.353, 69%, 52%);
+}
+
 .footer-logo {
   color: hsl(0, 0%, 100%);
   font-family: "Kanit", sans-serif;
@@ -17,6 +21,9 @@
   font-weight: 600;
 }
 
+.footer-logo:hover{
+  color: hsla(42.353, 69%, 52%);
+}
 
 /* Footer Class */
 .img-footer-size {

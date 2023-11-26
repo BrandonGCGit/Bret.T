@@ -65,6 +65,12 @@
   font-size: var(--fs-23);
   font-weight: var(--fw-reg);
   margin-top: -15px;
+  background: transparent;
+  border: none;
+}
+
+.work-prof:hover{
+  text-decoration: underline;
 }
 
 .subs-prof{

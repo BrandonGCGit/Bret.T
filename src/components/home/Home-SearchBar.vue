@@ -5,7 +5,7 @@
 <template>
   <!--Search Bar Start-->
   <div class="col-12 p-0 m-0">
-    <div class="d-flex align-items-center bg-container-search py-5">
+    <div class="d-flex align-items-center bg-container-search pb-5">
       <div class="col-10 container-fluid">
         <div class=" row justify-content-center align-items-center">
           <h1 class="my-4 title-font text-center">¿Ofreces servicios o estás buscando contratar servicios en Costa Rica?

@@ -27,7 +27,7 @@ onMounted(async () => {
   <div class="category-homecard card mx-3 rounded-3 my-3" v-for="(item, index) in listCategories" v-bind:key="index">
     <img :src="item.image" class="card-img-top img-cards mx-auto mt-5 mb-4" alt="a">
     <div class="card-body">
-      <h5 class="card-title cards-font bt-3 mb-5">{{ item.categoryname }}</h5>
+      <h5 class="card-title cards-font bt-3 mb-3">{{ item.categoryname }}</h5>
     </div>
   </div>
 </template>

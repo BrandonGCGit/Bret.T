@@ -9,6 +9,8 @@ import {useRoute} from "vue-router";
 
 const loading = ref(false);
 let isLogged = ref(false);
+let isDataNull = ref(true);
+let showInfo = ref(false);
 
 const dataProfile = ref({
   id: '',
@@ -53,6 +55,19 @@ function userIsLogged(){
 
 }
 
+function userData(){
+  if (dataProfile.value.description === null)
+  {
+    isDataNull.value = true
+    showInfo.value = false
+  }
+  else
+  {
+    isDataNull.value = false
+    showInfo.value = true
+  }
+
+}
 
 const idProfile = useRoute().params.id
 
@@ -71,6 +86,8 @@ const getProfileData = async () =>{
     dataProfile.value.ratings_id = response.data.data.ratings_id
     dataProfile.value.contacts_id = response.data.data.contacts_id
     dataProfile.value.users_id = response.data.data.users_id
+
+    userData()
 
     // console.log("Full name response?: ", response.data.data.name)
     // console.log("Full name?: ", dataProfile.value)
@@ -178,8 +195,10 @@ onBeforeMount(async () => {
           <div v-else class="mt-3 msg-jobs">Actualmente no se ha registrado ningún trabajo por parte de este usuario. <span class="fw-semibold">¡Estamos ansiosos por ver las futuras contribuciones que pueda compartir!</span></div>
         </div>
           <ProfileCardInfo
-              :is-logged="isLogged"
               :info-profile="dataProfile"
+              :is-logged="isLogged"
+              :dataStatus="isDataNull"
+              :dataShow="showInfo"
           ></ProfileCardInfo>
       </div>
     </div>

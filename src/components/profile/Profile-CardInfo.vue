@@ -5,7 +5,9 @@ import router from "@/router";
 
 defineProps({
   infoProfile: ref([]),
-  isLogged: Boolean
+  isLogged: Boolean,
+  dataStatus: Boolean,
+  dataShow: Boolean
 })
 const editProfile = async ($id) => {
   console.log("ID PROFILE CARD-INFO",$id)
@@ -17,7 +19,7 @@ const editProfile = async ($id) => {
 <template>
   <div class="card-info bg-light-blue">
     <div class="d-flex justify-content-center">
-      <img :src="infoProfile.image" class="icon-info" alt="hombre-profile">
+      <img :src="infoProfile.image" class="icon-info" alt="profile">
     </div>
     <div class="d-flex justify-content-center pt-3">
       <p class="name-prof"> {{infoProfile.name}} <span class="ms-1"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none">
@@ -29,26 +31,30 @@ const editProfile = async ($id) => {
     </div>
     <div class="d-flex justify-content-center">
     </div>
-    <div class="d-flex justify-content-center pt-2">
+    <div v-if="dataShow" class="d-flex justify-content-center pt-2">
       <p class="subs-prof color-darkblue"><i class="bi bi-geo-alt icon-ubi text-dark me-1"></i>{{infoProfile.province}}</p>
     </div>
-    <div class="d-flex justify-content-between pt-3">
-      <p class="subs-prof m-0">DESCRIPCIÓN</p>
-      <a v-if="isLogged" @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Editar</a>
+    
+    <div class="d-flex justify-content-center pt-3">
+      <button v-if="isLogged, dataStatus" @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Añadir información</button>
     </div>
-    <div class="d-flex justify-content-between pt-2">
+    <div v-if="dataShow" class="d-flex justify-content-between pt-3">
+      <p class="subs-prof m-0">DESCRIPCIÓN</p>
+      <button v-if="isLogged" @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Editar</button>
+    </div>
+    <div v-if="dataShow" class="d-flex pt-2">
       <p class="description-prof m-0">{{infoProfile.description}}</p>
     </div>
-    <div class="d-flex justify-content-between pt-4">
+    <div v-if="dataShow" class="d-flex pt-4">
       <p class="subs-prof m-0">HABILIDADES</p>
     </div>
-    <div class="d-flex justify-content-between pt-2">
+    <div v-if="dataShow" class="d-flex pt-2">
       <p class="description-prof m-0">{{infoProfile.abilities}}</p>
     </div>
-    <div class="d-flex justify-content-start pt-4">
+    <div v-if="dataShow" class="d-flex pt-4">
       <p class="subs-prof m-0">CONTACTAR</p>
     </div>
-    <div class="pt-2 color-darkblue">
+    <div v-if="dataShow" class="pt-2 color-darkblue">
       <p class="description-prof m-0">{{infoProfile.phone_number}}</p>
     </div>
   </div>
