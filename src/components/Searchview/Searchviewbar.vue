@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import axios from "axios";
+import router from "@/router";
 const listCategories = ref([])
 const listJobs = ref([])
 
@@ -92,10 +93,22 @@ async function onClickSearchJob(letter) {
   }
 };
 
-function getProfileId (id){
+async function getProfileId (id){
+  let profile_id
+  try {
+    const response =  await axios.get(`http://localhost/demo-bret/public/api/profile_job_filter/${id}`);
+    profile_id = response.data.data.profiles_id
 
 
+    const responseProfileId =  await axios.get(`http://localhost/demo-bret/public/api/profile_filter/${profile_id}`);
 
+    router.push(`/profile/${responseProfileId.data.data.users_id}`)
+
+    console.log("id profile searcbar", response.data)
+
+  } catch (error) {
+    console.error("Error con a cargar lista de trabajos: ", error)
+  }
 }
 
 
@@ -129,20 +142,19 @@ function getProfileId (id){
                   data-bs-toggle="dropdown" aria-expanded="false">Categorias </button>
                 <ul class="dropdown-menu date-work text-center " aria-labelledby="dropdownMenuButton1">
                   <div v-for="n in listCategories">
-                    <li @click="onClickSelectedJob(n.id)" >{{ n.categoryname }}</li>
+                    <li onmouseover="this.style.cursor='grab'" @click="onClickSelectedJob(n.id)" >{{ n.categoryname }}</li>
                   </div>
                 </ul>
               </div>
-
               <!-- DROPDOWN-->
               <div class="dropdown ">
                 <button class="btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton1"
                   data-bs-toggle="dropdown" aria-expanded="false"> Precio </button>
                 <ul class="dropdown-menu date-work text-center " aria-labelledby="dropdownMenuButton1">
-                  <li  v-on:click="onClickCostJob(0, 500)">0-500</li>
-                  <li v-on:click="onClickCostJob(501, 1000)">501-1000</li>
-                  <li v-on:click="onClickCostJob(1001, 10000)">1001-10000</li>
-                  <li v-on:click="onClickCostJob(10001, 50000)">10001+</li>
+                  <li onmouseover="this.style.cursor='grab'" v-on:click="onClickCostJob(0, 1000)">₡0-1000</li>
+                  <li onmouseover="this.style.cursor='grab'" v-on:click="onClickCostJob(1001, 5000)">₡1000-5000</li>
+                  <li onmouseover="this.style.cursor='grab'" v-on:click="onClickCostJob(5001, 20000)">₡5000-20000</li>
+                  <li onmouseover="this.style.cursor='grab'" v-on:click="onClickCostJob(20001, 9999999999999)">₡20000 o mas</li>
                 </ul>
               </div>
             </div>
@@ -163,12 +175,11 @@ function getProfileId (id){
       <div class=" py-4">
         <div class="col-10 container-fluid">
           <div class="row justify-content-center align-items-center text-center">
-
             <div v-for="n in listJobs" class="card m-2 " style="width: 18rem;">
               <div class="card-body ">
                 <h5 class="title-work">{{ n.nameJob }}</h5>
                 <p class="description-work2">{{ n.description }}</p>
-                <p class="amount-work">{{ n.cost }}/h</p>
+                <p class="amount-work"> ₡{{ n.cost }}/h</p>
                 <button @click="getProfileId(n.id)" class="btn-contacto btn">Ver Perfil</button>
               </div>
             </div>

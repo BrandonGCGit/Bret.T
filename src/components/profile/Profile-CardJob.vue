@@ -58,7 +58,7 @@ onBeforeMount(async () => {
       </svg></button>
     </div>
     <p class="title-work mb-1">{{categories_id}}</p>
-    <p class="color-darkblue amount-work mb-2">{{cost}} Colones</p>
+    <p class="color-darkblue amount-work mb-2">₡{{cost}}/h</p>
     <p class="description-work">{{description}}</p>
     <div class="d-flex justify-content-between mt-5">
       <p class="date-work">Publicado el {{created_at}}</p>

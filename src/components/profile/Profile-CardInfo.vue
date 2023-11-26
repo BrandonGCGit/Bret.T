@@ -36,7 +36,7 @@ const editProfile = async ($id) => {
     </div>
     
     <div class="d-flex justify-content-center pt-3">
-      <button v-if="isLogged, dataStatus" @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Añadir información</button>
+      <button v-if="isLogged" @click="editProfile(infoProfile.id)" class="work-prof color-darkblue p-0 m-0">Añadir información</button>
     </div>
     <div v-if="dataShow" class="d-flex justify-content-between pt-3">
       <p class="subs-prof m-0">DESCRIPCIÓN</p>

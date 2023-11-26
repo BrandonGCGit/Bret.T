@@ -50,7 +50,7 @@ onBeforeMount(async () => {
   <div class="col-12 p-0 m-0">
     <nav class="navbar navbar-expand-lg ff-popins pt-4 bg-navbar-blue">
       <div class="col-10 container-fluid">
-        <a class="navbar-brand hvr-grow" href="#"><img src="@/assets/img/Bre.T.png" alt="Logo Bre.T"></a>
+        <router-link to="/"  class="navbar-brand hvr-grow"><img src="@/assets/img/Bre.T.png" alt="Logo Bre.T"></router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@ onBeforeMount(async () => {
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <!--Dropdowns Start-->
-            <DropdownList></DropdownList>
+<!--            <DropdownList></DropdownList>-->
            <!--Dropdowns End-->
             <!--<li class="nav-item">
               <a class="nav-link active text-white fw-light fs-5 hvr-underline-from-left" aria-current="page" href="#">Ser vendedor</a>

@@ -17,26 +17,13 @@
               filtrar por
               categoría, ubicación, experiencia, etc.</p>
 
-            <div class="search ">
-              <input type="text" class="form-control search_bar-font"
-                     placeholder="&#xf002;   Busca cualquier sevicio...">
-              <!--<button class="btn btn-primary font-weight-bold search_btn-font">Buscar</button>-->
+<!--              <input type="text" class="form-control search_bar-font"-->
+<!--                     placeholder="&#xf002;   Busca cualquier sevicio...">-->
+<!--              &lt;!&ndash;<button class="btn btn-primary font-weight-bold search_btn-font">Buscar</button>&ndash;&gt;-->
               <!--<a href="" class="btn btn-primary font-weight-bold search_btn-font d-flex align-content-center justify-content-center" >Buscar</a>-->
               <RouterLink
-                class="btn btn-primary font-weight-bold search_btn-font d-flex align-content-center justify-content-center" to="search" >Buscar
+                class="fs-3 btn btn-primary font-weight-bold search_btn-font d-flex align-content-center justify-content-center" to="search" >Ver Trabajos
               </RouterLink>
-            </div>
-
-            <div class="my-3 mx-4 d-flex justify-content-center align-items-center">
-              <h4 class="popular-section">Populares: </h4>
-              <ul class="popular-section">
-                <a class="mx-2 popular-links" href="">Diseño web</a>
-                <a class="mx-2 popular-links" href="">WordPress</a>
-                <a class="mx-2 popular-links" href="">Diseñador de logo</a>
-                <a class="mx-2 popular-links" href="">Todos los servicios</a>
-              </ul>
-            </div>
-
           </div>
         </div>
       </div>
