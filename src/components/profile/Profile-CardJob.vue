@@ -46,7 +46,7 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <div class="card-works shadow-lg p-3 mb-5 bg-body-tertiary rounded mt-3">
+  <div class="card-works p-3 mb-5 bg-body-tertiary rounded mt-3">
     <div class="d-flex justify-content-between">
       <p class="title-work pt-4 mb-1">{{name}}</p>
       <button v-if="isLogged" @click="deleteJob(id)" class="btn-delete pt-2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
@@ -63,7 +63,7 @@ onBeforeMount(async () => {
     <div class="d-flex justify-content-between mt-5">
       <p class="date-work">Publicado el {{created_at}}</p>
       <div class="d-flex gap-4">
-        <button v-if="isLogged" class="btn-imp text-white">Impulsar</button>
+        <!--<button v-if="isLogged" class="btn-imp text-white">Impulsar</button>-->
         <button v-if="isLogged" @click="editJob(id)" class="btn-edit text-dark">Editar detalles</button>
       </div>
     </div>

@@ -10,10 +10,10 @@ import HomeCardPoular from "@/components/home/Home-CardPoular.vue";
       <div class="col-10 container-fluid">
         <div class="row justify-content-center align-items-center text-center">
           <h1 class="my-4 title-font text-black ">Populares ahora</h1>
-          <p class="text-center subtitle-font text-black fw-light">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae quia ipsam, doloremque accusantium recusandae voluptatibus saepe officia blandit
+          <p class="text-center subtitle-font text-black fw-light">En BreT, nos enorgullecemos de nuestro equipo excepcional. Conoce a algunos de nuestros trabajadores más destacados cuya dedicación, pasión y experiencia han impulsado el éxito de su trabajo.
           </p>
 
-          <div class="card-group mx-5 my-3">
+          <div class="card-group mx-3 my-3 justify-content-center">
             <HomeCardPoular></HomeCardPoular>
           </div>
 <!--          <a class="text-decoration-none text-black footer-font justify-content-center" href="">Ver todos</a>-->

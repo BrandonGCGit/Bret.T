@@ -61,9 +61,9 @@ onBeforeMount(async () => {
             <!--Dropdowns Start-->
             <DropdownList></DropdownList>
            <!--Dropdowns End-->
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="nav-link active text-white fw-light fs-5 hvr-underline-from-left" aria-current="page" href="#">Ser vendedor</a>
-            </li>
+            </li>-->
           </ul>
           <ul class="navbar-nav gap-4">
             <li class="nav-item">
