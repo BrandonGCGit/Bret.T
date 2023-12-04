@@ -1,4 +1,4 @@
-
+![Logo](https://i.postimg.cc/k40YWT9f/Bre-T.png)
 Bre.T es un sitio web el cual le permite a sus usuarios dar a conocer sus habilidades y ganar dinero con ellas. (Vuejs, Laravel)
 See [Figma](https://www.figma.com/file/DcgVNchvrsvIvnIbvI2U8z/BreT?type=design&mode=design&t=TOC8bSHcOaZ3HHLT-1).
 
