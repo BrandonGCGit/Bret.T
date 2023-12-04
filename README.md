@@ -1,6 +1,6 @@
-# bret-vuejs
 
-This template should help get you started developing with Vue 3 in Vite.
+Bre.T es un sitio web el cual le permite a sus usuarios dar a conocer sus habilidades y ganar dinero con ellas. (Vuejs, Laravel)
+See [Figma](https://www.figma.com/file/DcgVNchvrsvIvnIbvI2U8z/BreT?type=design&mode=design&t=TOC8bSHcOaZ3HHLT-1).
 
 ## Recommended IDE Setup
 
